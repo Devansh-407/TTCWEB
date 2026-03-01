@@ -78,7 +78,7 @@ export function TopSellingGiftsSection() {
           {/* Scrollable Container */}
           <div 
             ref={containerRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
             style={{
               scrollbarWidth: 'none', /* Firefox */
               msOverflowStyle: 'none', /* IE and Edge */
