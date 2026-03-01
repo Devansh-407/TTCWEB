@@ -2,11 +2,12 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
-import { testimonials } from "@/lib/data"
+import { getTestimonials } from "@/lib/data-loader"
 import { useState, useEffect } from "react"
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const testimonials = getTestimonials()
 
   useEffect(() => {
     const timer = setInterval(() => {

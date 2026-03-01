@@ -1,0 +1,33 @@
+{
+  "_instructions": "SISTER: Update your customer testimonials here.",
+  "_fields": {
+    "name": "Customer name",
+    "location": "Customer location and occasion",
+    "rating": "Rating from 1-5",
+    "comment": "Customer review text",
+    "image": "Customer photo filename (optional)"
+  },
+  "testimonials": [
+    {
+      "name": "Priya Sharma",
+      "location": "Mumbai, Anniversary Gift",
+      "rating": 5,
+      "comment": "The memory album they created for our 10th anniversary was absolutely breathtaking. Every page told our story beautifully, and my husband was moved to tears. It's now our most treasured possession.",
+      "image": "/woman-smiling-testimonial-photo.jpg"
+    },
+    {
+      "name": "Rahul Verma",
+      "location": "Delhi, Proposal Package",
+      "rating": 5,
+      "comment": "They helped me plan the perfect proposal with a custom music box and romantic setup. Sarah said yes! The attention to detail and personal touch made this moment absolutely magical and unforgettable.",
+      "image": "/man-smiling-testimonial-photo.jpg"
+    },
+    {
+      "name": "Anita Desai",
+      "location": "Bangalore, Birthday Surprise",
+      "rating": 5,
+      "comment": "My daughter's 16th birthday gift was a custom scrapbook filled with memories from her childhood. She cried happy tears and said it was the most meaningful gift she'd ever received. Absolutely worth every penny.",
+      "image": "/asian-woman-smiling-testimonial-photo.jpg"
+    }
+  ]
+}

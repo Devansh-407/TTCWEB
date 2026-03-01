@@ -1,0 +1,40 @@
+{
+  "_instructions": "SISTER: Update your website basic information here.",
+  "_fields": {
+    "siteName": "Your business name",
+    "tagline": "Your business tagline",
+    "description": "Website description for SEO",
+    "logo": "Logo filename in /public folder",
+    "favicon": "Favicon filename in /public folder",
+    "navigation": "Main navigation menu items"
+  },
+  "siteConfig": {
+    "siteName": "The Tohfa Creations",
+    "tagline": "Handcrafted Gifts, Personalized with Love",
+    "description": "Handcrafted with love, personalized with care. Find the perfect gift to celebrate life's most precious moments.",
+    "logo": "/logo.png",
+    "favicon": "/favicon.ico",
+    "seo": {
+      "keywords": "handmade gifts, personalized gifts, custom gifts, anniversary gifts, birthday gifts, wedding gifts, handmade crafts",
+      "author": "The Tohfa Creations"
+    },
+    "navigation": [
+      {
+        "name": "Home",
+        "href": "/"
+      },
+      {
+        "name": "About",
+        "href": "/about"
+      },
+      {
+        "name": "Gifts",
+        "href": "/gifts"
+      },
+      {
+        "name": "Contact",
+        "href": "/contact"
+      }
+    ]
+  }
+}

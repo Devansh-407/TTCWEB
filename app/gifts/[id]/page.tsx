@@ -1,6 +1,6 @@
 import { ProductDetails } from "@/components/product-details"
 import { RelatedProducts } from "@/components/related-products"
-import { products } from "@/lib/data"
+import { getProducts, getProductById } from "@/lib/data-loader"
 import { notFound } from "next/navigation"
 
 interface ProductPageProps {
@@ -9,7 +9,7 @@ interface ProductPageProps {
 
 export async function generateMetadata({ params }: ProductPageProps) {
   const { id } = await params
-  const product = products.find((p) => p.id === id)
+  const product = getProductById(id)
 
   if (!product) {
     return {
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: ProductPageProps) {
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params
-  const product = products.find((p) => p.id === id)
+  const product = getProductById(id)
 
   if (!product) {
     notFound()

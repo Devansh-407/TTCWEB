@@ -1,0 +1,46 @@
+{
+  "_instructions": "SISTER: Update your about page content here.",
+  "_fields": {
+    "heroTitle": "Main title of about page",
+    "heroDescription": "Main description under title",
+    "storyTitle": "Our Story section title",
+    "storyContent": "Your business story paragraphs",
+    "missionTitle": "Mission section title",
+    "missionContent": "Your mission statement",
+    "values": "Your business values list"
+  },
+  "about": {
+    "heroTitle": "About The Tohfa Creations",
+    "heroDescription": "Handcrafted with love, personalized with care. Creating beautiful memories through unique handmade gifts.",
+    "story": {
+      "title": "Our Story",
+      "content": [
+        "The Tohfa Creations began as a small dream in my workshop, surrounded by colorful papers, ribbons, and endless possibilities. What started as creating gifts for friends and family quickly grew into a passion for bringing joy to others through personalized, handmade creations.",
+        "Every piece we create tells a story - your story. We believe that the best gifts are not just objects, but memories captured in tangible form. Whether it's a wedding album, a birthday keepsake, or an anniversary treasure, each item is crafted with attention to detail and filled with love.",
+        "Over the years, we've had the privilege of being part of countless special moments - proposals, weddings, anniversaries, and celebrations of all kinds. Each commission has taught us something new about the art of gift-giving and the importance of personal touches."
+      ]
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "To create beautiful, personalized handmade gifts that capture life's most precious moments and bring joy to both giver and receiver. We strive to make every gift a cherished memory that lasts a lifetime."
+    },
+    "values": [
+      {
+        "title": "Handcrafted Quality",
+        "description": "Every piece is meticulously crafted by hand with premium materials and attention to detail."
+      },
+      {
+        "title": "Personalization",
+        "description": "We believe in the power of personal touches and work closely with clients to create unique, meaningful gifts."
+      },
+      {
+        "title": "Sustainability",
+        "description": "We use eco-friendly materials and sustainable practices whenever possible to protect our planet."
+      },
+      {
+        "title": "Customer Love",
+        "description": "Your happiness is our priority. We go above and beyond to ensure every gift exceeds expectations."
+      }
+    ]
+  }
+}

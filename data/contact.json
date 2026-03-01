@@ -1,0 +1,76 @@
+{
+  "_instructions": "SISTER: Update your contact information here.",
+  "_fields": {
+    "title": "Contact page title",
+    "description": "Contact page description",
+    "email": "Your business email",
+    "phone": "Your business phone",
+    "address": "Your business address",
+    "hours": "Your business hours",
+    "connectWithUs": "Connect With Us section",
+    "socialMedia": "Social media links with follower counts",
+    "recentPosts": "Recent posts section with Instagram/Facebook content"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Have a question or want to discuss a custom gift? We'd love to hear from you!",
+    "email": "hello@tohfacreations.com",
+    "phone": "+91 98765 43210",
+    "address": "123 Craft Street, Artisan Colony, Mumbai, Maharashtra 400001",
+    "hours": {
+      "weekdays": "Monday - Friday: 10:00 AM - 7:00 PM",
+      "saturday": "Saturday: 10:00 AM - 5:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "connectWithUs": {
+      "title": "Connect With Us",
+      "description": "Follow us on social media for inspiration, behind-the-scenes content, and special offers."
+    },
+    "socialMedia": [
+      {
+        "platform": "Facebook",
+        "followers": "12.5K followers",
+        "link": "https://facebook.com/tohfacreations"
+      },
+      {
+        "platform": "Instagram",
+        "followers": "8.2K followers",
+        "link": "https://instagram.com/tohfacreations"
+      },
+      {
+        "platform": "Twitter",
+        "followers": "5.8K followers",
+        "link": "https://twitter.com/tohfacreations"
+      },
+      {
+        "platform": "LinkedIn",
+        "followers": "5.1K followers",
+        "link": "https://linkedin.com/tohfacreations"
+      }
+    ],
+    "recentPosts": {
+      "title": "Recent Posts",
+      "description": "See what we've been working on lately",
+      "posts": [
+        {
+          "platform": "Instagram",
+          "timeAgo": "2 hours ago",
+          "content": "Just finished this beautiful custom jewelry box for Sarah's anniversary gift! 🎁",
+          "image": "/recent-post-1.jpg"
+        },
+        {
+          "platform": "Facebook",
+          "timeAgo": "1 day ago",
+          "content": "Behind the scenes: Creating magic one piece at a time in our studio ✨",
+          "image": "/recent-post-2.jpg"
+        },
+        {
+          "platform": "Instagram",
+          "timeAgo": "3 days ago",
+          "content": "Emily's reaction when she received her custom photo album was priceless. 💕",
+          "image": "/recent-post-3.jpg"
+        }
+      ]
+    }
+  }
+}

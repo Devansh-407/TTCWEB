@@ -4,9 +4,14 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
-import { Star, ShoppingCart, Heart, Share2, Minus, Plus } from "lucide-react"
+import { Star, ShoppingCart, Heart, Share2, Minus, Plus, MessageCircle } from "lucide-react"
 import type { Product } from "@/lib/types"
 import { useState } from "react"
+
+// Format price in INR
+function formatPrice(price: number) {
+  return `₹${price.toLocaleString('en-IN')}`
+}
 
 interface ProductDetailsProps {
   product: Product
@@ -17,15 +22,19 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   const [customization, setCustomization] = useState("")
   const [selectedImage, setSelectedImage] = useState(0)
 
-  const images = [product.image, product.image, product.image] // In real app, would have multiple images
+  const images = product.images || (product.image ? [product.image] : ["/placeholder.svg"])
 
   const handleQuantityChange = (change: number) => {
     setQuantity(Math.max(1, quantity + change))
   }
 
   const handleAddToCart = () => {
-    // Add to cart logic will be implemented later
-    console.log("Adding to cart:", { product, quantity, customization })
+    // Create WhatsApp message with product details
+    const message = `Hello! I'm interested in this product:\n\n🎁 *${product.name}*\n💰 Price: ${formatPrice(product.price)}\n📝 ${product.description}\n🔢 Quantity: ${quantity}\n${customization ? `✏️ Customization: ${customization}` : ''}\n\nCan you provide more details about customization options?`
+    
+    // Open WhatsApp with product details
+    const whatsappUrl = `https://wa.me/6396202262?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
@@ -42,7 +51,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               />
             </div>
             <div className="grid grid-cols-3 gap-4">
-              {images.map((image, index) => (
+              {images.map((image: string, index: number) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
@@ -87,12 +96,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <p className="text-gray-700 leading-relaxed">{product.description}</p>
 
               <div className="flex items-center space-x-4">
-                <span className="text-3xl font-bold text-gray-900">${product.price}</span>
+                <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price)}</span>
                 {product.originalPrice && (
-                  <span className="text-xl text-gray-500 line-through">${product.originalPrice}</span>
+                  <span className="text-xl text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                 )}
                 {product.originalPrice && (
-                  <Badge className="bg-green-500 text-white">Save ${product.originalPrice - product.price}</Badge>
+                  <Badge className="bg-green-500 text-white">Save {formatPrice(product.originalPrice - product.price)}</Badge>
                 )}
               </div>
             </div>
@@ -131,11 +140,10 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <div className="flex space-x-4">
                 <Button
                   onClick={handleAddToCart}
-                  className="flex-1 bg-purple-500 hover:bg-purple-600 text-white py-3"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3"
                   size="lg"
                 >
-                  <ShoppingCart className="h-5 w-5 mr-2" />
-                  Add to Cart
+                  Proceed
                 </Button>
                 <Button variant="outline" size="lg" className="bg-transparent">
                   <Heart className="h-5 w-5" />

@@ -2,11 +2,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, ShoppingCart } from "lucide-react"
-import { products } from "@/lib/data"
+import { getTopSellingProducts } from "@/lib/data-loader"
 import Link from "next/link"
 
 export function FeaturedProducts() {
-  const featuredProducts = products.slice(0, 6)
+  const featuredProducts = getTopSellingProducts().slice(0, 6)
 
   return (
     <section className="py-16 bg-gray-50">
@@ -23,7 +23,7 @@ export function FeaturedProducts() {
             <Card key={product.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="relative aspect-square overflow-hidden bg-gray-50">
                 <img
-                  src={product.image || "/placeholder.svg"}
+                  src={product.images?.[0] || product.image || "/placeholder.svg"}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

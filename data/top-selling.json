@@ -1,0 +1,11 @@
+{
+  "_instructions": "SISTER: Update your top selling products here. These appear on the home page.",
+  "_fields": {
+    "productIds": "List of product IDs that should appear as top selling (from products.json)"
+  },
+  "topSelling": {
+    "title": "Top Selling Gifts",
+    "description": "Discover our most loved and highly-rated gifts that have brought joy to countless celebrations.",
+    "productIds": ["1", "2", "3", "4", "5", "6", "7", "8"]
+  }
+}

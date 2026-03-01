@@ -114,7 +114,8 @@ export function Navigation() {
               </Link>
             </Button>
             
-            {/* Profile Section */}
+            {/* Profile Section - HIDDEN FOR FUTURE USE */}
+            {/* 
             <div className="relative">
               {isAuthenticated ? (
                 <>
@@ -171,6 +172,7 @@ export function Navigation() {
                 </Button>
               )}
             </div>
+            */}
           </div>
         </div>
 
@@ -195,6 +197,8 @@ export function Navigation() {
                   </Link>
                 )
               })}
+              {/* Profile Section - HIDDEN FOR FUTURE USE */}
+              {/*
               <div className="pt-2 border-t">
                 {isAuthenticated ? (
                   <>
@@ -240,6 +244,7 @@ export function Navigation() {
                   </Button>
                 )}
               </div>
+              */}
             </div>
           </div>
         )}

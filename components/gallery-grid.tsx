@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Star, Search } from "lucide-react"
-import { products } from "@/lib/data"
+import { getProducts } from "@/lib/data-loader"
 import { useState } from "react"
 import Link from "next/link"
 
@@ -14,6 +14,7 @@ export function GalleryGrid() {
   const [sortBy, setSortBy] = useState("latest")
   const [searchQuery, setSearchQuery] = useState("")
   const [displayCount, setDisplayCount] = useState(6)
+  const products = getProducts()
 
   const filteredProducts = products.filter((product) => {
     if (selectedCategory !== "All Products") {
@@ -102,7 +103,7 @@ export function GalleryGrid() {
             <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative aspect-square overflow-hidden">
                 <img
-                  src={product.image || "/placeholder.svg"}
+                  src={product.images?.[0] || product.image || "/placeholder.svg"}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />

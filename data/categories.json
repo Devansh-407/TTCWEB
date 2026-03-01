@@ -1,0 +1,41 @@
+{
+  "_instructions": "SISTER: Update your shop categories here. These appear on the home page.",
+  "_fields": {
+    "name": "Category name as shown to customers",
+    "description": "Category description for customers",
+    "image": "Image filename in /public folder",
+    "href": "Link to filtered products (keep the ?category= part)"
+  },
+  "categories": [
+    {
+      "name": "Gift Hamper",
+      "description": "Curated collections of premium items beautifully packaged for the perfect gifting experience.",
+      "image": "/elegant-gift-boxes-with-pink-ribbons-on-white-back.jpg",
+      "href": "/gifts?category=gift-hamper"
+    },
+    {
+      "name": "Gift Box",
+      "description": "Elegant gift boxes filled with carefully selected items tailored to your special occasion.",
+      "image": "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
+      "href": "/gifts?category=gift-box"
+    },
+    {
+      "name": "Bouquet",
+      "description": "Fresh and artificial floral arrangements that add beauty and fragrance to any celebration.",
+      "image": "/birthday-celebration-colorful-gifts.jpg",
+      "href": "/gifts?category=bouquet"
+    },
+    {
+      "name": "Miniature",
+      "description": "Delicate and detailed miniature crafts that capture precious memories in compact form.",
+      "image": "/ballerina-music-box-hand-painted.jpg",
+      "href": "/gifts?category=miniature"
+    },
+    {
+      "name": "Frame",
+      "description": "Beautiful frames to display your cherished memories and add elegance to any space.",
+      "image": "/wooden-family-photo-frame-with-engraving.jpg",
+      "href": "/gifts?category=frame"
+    }
+  ]
+}

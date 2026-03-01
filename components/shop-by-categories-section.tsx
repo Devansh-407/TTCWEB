@@ -1,15 +1,15 @@
 "use client"
 
 import { getCategories } from "@/lib/data-loader"
-import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link"
 
-export function CategoriesSection() {
+export function ShopByCategoriesSection() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [canScrollRight, setCanScrollRight] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const categories = getCategories()
+  const shopCategories = getCategories()
 
   useEffect(() => {
     const container = containerRef.current
@@ -38,12 +38,12 @@ export function CategoriesSection() {
   const canScrollLeft = scrollPosition > 0
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Shop by Occasions</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Shop by Categories</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Find the perfect gift for every special moment in your life, curated by occasion.
+            Explore our diverse range of handcrafted gift categories, each designed to bring joy and create lasting memories.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export function CategoriesSection() {
             }}
             onScroll={(e) => setScrollPosition(e.currentTarget.scrollLeft)}
           >
-            {categories.map((category, index) => (
+            {shopCategories.map((category, index) => (
               <div key={index} className="flex-none w-80">
                 <Link href={category.href} className="group block">
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow h-full">
@@ -105,7 +105,7 @@ export function CategoriesSection() {
 
           {/* Hide scrollbar CSS */}
           <style jsx>{`
-            #occasions-container::-webkit-scrollbar {
+            #categories-container::-webkit-scrollbar {
               display: none;
             }
           `}</style>

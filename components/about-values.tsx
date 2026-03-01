@@ -1,5 +1,5 @@
 import { Heart, HandHeart, Clock, Leaf, Users, Ribbon } from "lucide-react"
-import { testimonials } from "@/lib/data"
+import { getTestimonials } from "@/lib/data-loader"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
@@ -91,7 +91,7 @@ export function AboutValues() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
+            {getTestimonials().map((testimonial) => (
               <div key={testimonial.id} className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-center mb-4">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">

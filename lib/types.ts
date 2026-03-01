@@ -4,8 +4,10 @@ export interface Product {
   description: string
   price: number
   originalPrice?: number
-  image: string
+  image?: string // Backward compatibility
+  images?: string[] // New field - array of images
   category: string
+  occasion: string
   rating: number
   reviewCount: number
   customizationLevel: "basic" | "standard" | "premium"
