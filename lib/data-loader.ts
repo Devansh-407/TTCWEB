@@ -9,6 +9,9 @@ import aboutData from '../data/about.json'
 import contactData from '../data/contact.json'
 import siteConfigData from '../data/site-config.json'
 import testimonialsData from '../data/testimonials.json'
+import aboutValuesData from '../data/about-values.json'
+import contactInfoData from '../data/contact-info.json'
+import navigationData from '../data/navigation.json'
 
 // Type definitions for JSON data
 interface Product {
@@ -103,6 +106,19 @@ export function getSiteConfig() {
 
 export function getTestimonials(): Testimonial[] {
   return testimonialsData.testimonials
+}
+
+// New functions for dynamic data
+export function getAboutValues() {
+  return aboutValuesData
+}
+
+export function getContactInfo() {
+  return contactInfoData.contactItems
+}
+
+export function getNavigationItems() {
+  return navigationData.navItems
 }
 
 // Helper function to get product by ID

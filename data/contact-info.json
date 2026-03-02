@@ -1,0 +1,39 @@
+{
+  "_instructions": "SISTER: Update your contact information here.",
+  "_fields": {
+    "title": "Contact section title",
+    "description": "Description for customers",
+    "phone": "Phone number",
+    "email": "Email address",
+    "buttonText": "Button text"
+  },
+  "contactItems": [
+    {
+      "title": "General Inquiries",
+      "description": "Have questions about our products or services? Our friendly team is ready to help.",
+      "phone": "+91 6396202262",
+      "email": "tohfacreations3@gmail.com",
+      "buttonText": "Call Now",
+      "icon": "Phone",
+      "buttonColor": "purple"
+    },
+    {
+      "title": "Custom Orders",
+      "description": "Ready to create something special? Let's discuss your custom gift ideas and bring them to life.",
+      "phone": "Custom Design Team",
+      "email": "tohfacreations3@gmail.com",
+      "buttonText": "Start Project",
+      "icon": "Gift",
+      "buttonColor": "purple"
+    },
+    {
+      "title": "Customer Support",
+      "description": "Need help with an existing order or have concerns? Our support team is here for you.",
+      "phone": "24/7 Live Chat",
+      "email": "tohfacreations3@gmail.com",
+      "buttonText": "Get Help",
+      "icon": "Headphones",
+      "buttonColor": "green"
+    }
+  ]
+}

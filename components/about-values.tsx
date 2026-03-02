@@ -1,56 +1,24 @@
 import { Heart, HandHeart, Clock, Leaf, Users, Ribbon } from "lucide-react"
-import { getTestimonials } from "@/lib/data-loader"
+import { getTestimonials, getAboutValues } from "@/lib/data-loader"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 
-// Why Choose Section
-const whyChoose = [
-  {
-    icon: Heart,
-    title: "Premium Quality",
-    description: "We use only the finest materials and artisanal craftsmanship techniques to ensure every gift is built to last generations.",
-    link: "100% Customer Satisfaction",
-  },
-  {
-    icon: HandHeart,
-    title: "Personal Touch",
-    description: "Every piece is uniquely crafted to tell your personal story, making each gift as individual as the person receiving it.",
-    link: "100% Personalization",
-  },
-  {
-    icon: Clock,
-    title: "Timely Delivery",
-    description: "We understand the importance of special moments and guarantee your handcrafted gift will arrive exactly when you need it.",
-    link: "On-Time Guarantee",
-  },
-]
-
-// Values Section
-const values = [
-  {
-    icon: Heart,
-    title: "Love in Every Detail",
-    description: "We pour genuine care and attention into every aspect of our craft, ensuring each gift carries the love it's meant to express.",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainable Practices",
-    description: "We are committed to environmental responsibility, using eco-friendly materials and sustainable crafting methods in all our creations.",
-  },
-  {
-    icon: Users,
-    title: "Community Connection",
-    description: "We believe in supporting local artisans and giving back to our community through workshops and charitable partnerships.",
-  },
-  {
-    icon: Ribbon,
-    title: "Lasting Memories",
-    description: "Our mission is to create heirloom-quality gifts that will be treasured for generations, preserving precious memories forever.",
-  },
-]
+// Icon mapping function
+const getIcon = (iconName: string) => {
+  const icons: { [key: string]: any } = {
+    Heart,
+    HandHeart,
+    Clock,
+    Leaf,
+    Users,
+    Ribbon,
+  }
+  return icons[iconName] || Heart
+}
 
 export function AboutValues() {
+  const { whyChoose, values } = getAboutValues()
   return (
     <>
       {/* Why Choose Section */}
@@ -67,7 +35,10 @@ export function AboutValues() {
             {whyChoose.map((item) => (
               <div key={item.title} className="text-center">
                 <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="h-10 w-10 text-purple-500" />
+                  {(() => {
+                    const IconComponent = getIcon(item.icon)
+                    return IconComponent ? <IconComponent className="h-10 w-10 text-purple-500" /> : null
+                  })()}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
@@ -132,7 +103,10 @@ export function AboutValues() {
             {values.map((value) => (
               <div key={value.title} className="flex gap-4">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <value.icon className="h-8 w-8 text-purple-500" />
+                  {(() => {
+                    const IconComponent = getIcon(value.icon)
+                    return IconComponent ? <IconComponent className="h-8 w-8 text-purple-500" /> : null
+                  })()}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h3>

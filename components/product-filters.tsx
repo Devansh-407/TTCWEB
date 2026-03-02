@@ -3,12 +3,21 @@
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import { getCategories, getOccasions } from "@/lib/data-loader"
 
 export function ProductFilters() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [occasion, setOccasion] = useState("all")
   const [category, setCategory] = useState("all")
+  const [categories, setCategories] = useState<any[]>([])
+  const [occasions, setOccasions] = useState<any[]>([])
+
+  // Load categories and occasions from data
+  useEffect(() => {
+    setCategories(getCategories())
+    setOccasions(getOccasions())
+  }, [])
 
   // Initialize filters from URL params
   useEffect(() => {
@@ -62,11 +71,11 @@ export function ProductFilters() {
           className="border border-gray-300 rounded-md px-4 py-2 text-sm bg-white min-w-[180px]"
         >
           <option value="all">All Occasions</option>
-          <option value="anniversary">Anniversary</option>
-          <option value="birthday">Birthday</option>
-          <option value="proposal">Proposal</option>
-          <option value="wedding">Wedding</option>
-          <option value="graduation">Graduation</option>
+          {occasions.map((occ) => (
+            <option key={occ.name} value={occ.name.toLowerCase()}>
+              {occ.name}
+            </option>
+          ))}
         </select>
       </div>
 
@@ -79,11 +88,11 @@ export function ProductFilters() {
           className="border border-gray-300 rounded-md px-4 py-2 text-sm bg-white min-w-[180px]"
         >
           <option value="all">All Categories</option>
-          <option value="gift-hamper">Gift Hamper</option>
-          <option value="gift-box">Gift Box</option>
-          <option value="bouquet">Bouquet</option>
-          <option value="miniature">Miniature</option>
-          <option value="frame">Frame</option>
+          {categories.map((cat) => (
+            <option key={cat.name} value={cat.href.split('=')[1]}>
+              {cat.name}
+            </option>
+          ))}
         </select>
       </div>
 

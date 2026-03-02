@@ -36,6 +36,12 @@
       "description": "Beautiful frames to display your cherished memories and add elegance to any space.",
       "image": "/wooden-family-photo-frame-with-engraving.jpg",
       "href": "/gifts?category=frame"
+    },
+    {
+      "name": "Miniature Frame",
+      "description": "beautiful miniature frames",
+      "image": "/wooden-family-photo-frame-with-engraving.jpg",
+      "href": "/gifts?category=frame"
     }
   ]
 }
