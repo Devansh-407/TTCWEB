@@ -121,6 +121,10 @@ export function getNavigationItems() {
   return navigationData.navItems
 }
 
+export function getContact() {
+  return contactData.contact
+}
+
 // Helper function to get product by ID
 export function getProductById(id: string): Product | undefined {
   const products = getProducts()

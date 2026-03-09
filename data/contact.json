@@ -9,7 +9,8 @@
     "hours": "Your business hours",
     "connectWithUs": "Connect With Us section",
     "socialMedia": "Social media links with follower counts",
-    "recentPosts": "Recent posts section with Instagram/Facebook content"
+    "recentPosts": "Recent posts section with Instagram/Facebook content",
+    "redirectLink": "Direct link to the actual social media post (boosts engagement!)"
   },
   "contact": {
     "title": "Get in Touch",
@@ -56,19 +57,22 @@
           "platform": "Instagram",
           "timeAgo": "2 hours ago",
           "content": "Just finished this beautiful custom jewelry box for Sarah's anniversary gift! 🎁",
-          "image": "/recent-post-1.jpg"
+          "image": "/recent-post-1.jpg",
+          "redirectLink": "https://instagram.com/p/XYZ123"
         },
         {
           "platform": "Facebook",
           "timeAgo": "1 day ago",
           "content": "Behind the scenes: Creating magic one piece at a time in our studio ✨",
-          "image": "/recent-post-2.jpg"
+          "image": "/recent-post-2.jpg",
+          "redirectLink": "https://facebook.com/tohfacreations/posts/ABC456"
         },
         {
           "platform": "Instagram",
           "timeAgo": "3 days ago",
           "content": "Emily's reaction when she received her custom photo album was priceless. 💕",
-          "image": "/recent-post-3.jpg"
+          "image": "/recent-post-3.jpg",
+          "redirectLink": "https://instagram.com/p/DEF789"
         }
       ]
     }
