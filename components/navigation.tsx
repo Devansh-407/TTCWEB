@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ShoppingCart, User, Heart } from "lucide-react"
+import { Menu, X, ShoppingCart, Heart } from "lucide-react"
 import { AnimatedLogo } from "@/components/animated-logo"
 import { useCart } from "@/lib/cart-store"
 import { useFavourites } from "@/lib/favourites-store"
@@ -109,69 +109,6 @@ export function Navigation() {
                 )}
               </Link>
             </Button>
-            
-            {/* Profile Section - HIDDEN FOR FUTURE USE */}
-            {/* 
-            <div className="relative">
-              {isAuthenticated ? (
-                <>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setIsProfileOpen(!isProfileOpen)}
-                    className="flex items-center space-x-2"
-                  >
-                    <User className="h-6 w-6" />
-                    <span className="text-sm">{user?.name}</span>
-                  </Button>
-                  
-                  {isProfileOpen && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                      <Link
-                        href="/profile"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => setIsProfileOpen(false)}
-                      >
-                        Account
-                      </Link>
-                      <Link
-                        href="/orders"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => setIsProfileOpen(false)}
-                      >
-                        Orders
-                      </Link>
-                      <Link
-                        href="/favourites"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => setIsProfileOpen(false)}
-                      >
-                        Favourites
-                      </Link>
-                      <button
-                        onClick={() => {
-                          logout()
-                          setIsProfileOpen(false)
-                        }}
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  )}
-                </>
-              ) : (
-                {/* Sign In Button - HIDDEN FOR FUTURE USE */}
-                {/*
-                <Button variant="ghost" size="sm" asChild>
-                  <Link href="/signin">
-                    <User className="h-6 w-6" />
-                  </Link>
-                </Button>
-                */}
-              )}
-            </div>
-            */}
           </div>
         </div>
 
@@ -196,57 +133,6 @@ export function Navigation() {
                   </Link>
                 )
               })}
-              {/* Profile Section - HIDDEN FOR FUTURE USE */}
-              {/*
-              <div className="pt-2 border-t">
-                {isAuthenticated ? (
-                  <>
-                    <div className="px-3 py-2 text-sm text-gray-700">
-                      Welcome, {user?.name}
-                    </div>
-                    <Link
-                      href="/profile"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-500 hover:bg-gray-50"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Account
-                    </Link>
-                    <Link
-                      href="/orders"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-500 hover:bg-gray-50"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Orders
-                    </Link>
-                    <Link
-                      href="/favourites"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:text-purple-500 hover:bg-gray-50"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Favourites
-                    </Link>
-                    <button
-                      onClick={() => {
-                        logout()
-                        setIsMenuOpen(false)
-                      }}
-                      className="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:text-purple-500 hover:bg-gray-50"
-                    >
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  {/* Mobile Sign In Button - HIDDEN FOR FUTURE USE */}
-                  {/*
-                  <Button variant="outline" asChild className="w-full">
-                    <Link href="/signin" onClick={() => setIsMenuOpen(false)}>
-                      Sign In
-                    </Link>
-                  </Button>
-                  */}
-                )}
-              </div>
-              */}
             </div>
           </div>
         )}
