@@ -1,5 +1,5 @@
 {
-  "_instructions": "SISTER: Update your products here. Only edit the values in the products array below.",
+  "_instructions": "SISTER: Update your complete product catalog here. All products and featured items in one place!",
   "_fields": {
     "id": "Unique product ID (never change existing IDs)",
     "name": "Product name as shown to customers",
@@ -15,10 +15,16 @@
     "reviewCount": "Number of reviews (e.g., 127)",
     "customizationLevel": "basic, standard, or premium",
     "inStock": "true or false - whether product is available",
-    "specifications": "Product specifications (material, size, weight, etc.)",
-    "shipping": "Shipping information (delivery time, packaging, etc.)",
+    "specifications": "Product specifications (material, size, weight, color, etc.)",
+    "shipping": "Shipping information (delivery time, packaging, shipping cost, etc.)",
     "careInstructions": "Care and maintenance instructions",
-    "features": "Array of key product features/benefits"
+    "features": "Array of key product features/benefits",
+    "topSelling": "Featured products that appear on homepage"
+  },
+  "topSelling": {
+    "title": "Top Selling Gifts",
+    "description": "Discover our most loved and highly-rated gifts that have brought joy to countless celebrations.",
+    "productIds": ["1", "2", "3", "4", "5", "6", "7", "8"]
   },
   "products": [
     {

@@ -3,10 +3,10 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
-import { getTopSellingProducts } from "@/lib/data-loader"
+import { getTopSelling } from "@/lib/data-loader"
 
 // Get top selling products (highest rated/most popular)
-const topSellingProducts = getTopSellingProducts()
+const topSellingProducts = getTopSelling()
   .filter(product => product.rating >= 4.7)
   .sort((a, b) => b.reviewCount - a.reviewCount)
   .slice(0, 8)

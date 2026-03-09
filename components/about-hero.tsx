@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { getAboutHero } from "@/lib/data-loader"
+import { getAbout } from "@/lib/data-loader"
 
 export function AboutHero() {
-  const hero = getAboutHero()
+  const about = getAbout()
+  const hero = about.hero
   return (
     <section className="relative min-h-87.5 flex items-center overflow-hidden">
       {/* Background Image */}

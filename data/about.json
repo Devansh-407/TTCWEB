@@ -1,45 +1,71 @@
 {
-  "_instructions": "SISTER: Update your about page content here.",
+  "_instructions": "SISTER: Update your complete about page content here. Everything about your business in one place!",
   "_fields": {
-    "heroTitle": "Main title of about page",
-    "heroDescription": "Main description under title",
-    "storyTitle": "Our Story section title",
-    "storyContent": "Your business story paragraphs",
-    "missionTitle": "Mission section title",
-    "missionContent": "Your mission statement",
-    "values": "Your business values list"
+    "hero": "About page hero section (title, subtitle, description, button)",
+    "story": "Company story paragraphs",
+    "mission": "Mission statement",
+    "whyChoose": "Why Choose section items (with icons)",
+    "values": "Company values (with icons)"
   },
   "about": {
-    "heroTitle": "About The Tohfa Creations",
-    "heroDescription": "Handcrafted with love, personalized with care. Creating beautiful memories through unique handmade gifts.",
+    "hero": {
+      "title": "About The Tohfa Creations",
+      "subtitle": "Love & Craftsmanship",
+      "description": "Founded in 2016, The Tohfa Creations began as a small dream to create meaningful connections through handcrafted artistry. Every piece we create carries the passion and dedication of our skilled artisan team.",
+      "learnJourneyText": "Learn Our Journey"
+    },
     "story": {
       "title": "Our Story",
-      "content": [
-        "The Tohfa Creations began as a small dream in my workshop, surrounded by colorful papers, ribbons, and endless possibilities. What started as creating gifts for friends and family quickly grew into a passion for bringing joy to others through personalized, handmade creations.",
-        "Every piece we create tells a story - your story. We believe that the best gifts are not just objects, but memories captured in tangible form. Whether it's a wedding album, a birthday keepsake, or an anniversary treasure, each item is crafted with attention to detail and filled with love.",
-        "Over the years, we've had the privilege of being part of countless special moments - proposals, weddings, anniversaries, and celebrations of all kinds. Each commission has taught us something new about the art of gift-giving and the importance of personal touches."
+      "paragraphs": [
+        "It all started in 2016 when our founder, Sarah Martinez, created a handcrafted memory album for her parents' 40th wedding anniversary. What began as a personal project to capture their love story quickly became something more—a realization that every family has precious moments worth preserving in a beautiful, meaningful way.",
+        "That first album, filled with carefully selected photos, handwritten notes, and personal touches, moved her parents to tears. Friends and family who saw it began asking Sarah to create similar keepsakes for their own special occasions. Word spread, and what started as a passion project in her small apartment studio grew into The Tohfa Creations.",
+        "Today, we're a team of skilled artisans dedicated to creating handcrafted gifts that tell your unique story. From anniversary gifts to birthday surprises, proposal setups to memory albums, we pour our hearts into every piece, ensuring it becomes a treasured heirloom that celebrates life's most precious moments."
       ]
     },
     "mission": {
       "title": "Our Mission",
       "content": "To create beautiful, personalized handmade gifts that capture life's most precious moments and bring joy to both giver and receiver. We strive to make every gift a cherished memory that lasts a lifetime."
     },
+    "whyChoose": [
+      {
+        "icon": "Heart",
+        "title": "Premium Quality",
+        "description": "We use only the finest materials and artisanal craftsmanship techniques to ensure every gift is built to last generations.",
+        "link": "100% Customer Satisfaction"
+      },
+      {
+        "icon": "HandHeart",
+        "title": "Personal Touch",
+        "description": "Every piece is uniquely crafted to tell your personal story, making each gift as individual as the person receiving it.",
+        "link": "100% Personalization"
+      },
+      {
+        "icon": "Clock",
+        "title": "Timely Delivery",
+        "description": "We understand the importance of special moments and guarantee your handcrafted gift will arrive exactly when you need it.",
+        "link": "On-Time Guarantee"
+      }
+    ],
     "values": [
       {
-        "title": "Handcrafted Quality",
-        "description": "Every piece is meticulously crafted by hand with premium materials and attention to detail."
+        "icon": "Heart",
+        "title": "Love in Every Detail",
+        "description": "We pour genuine care and attention into every aspect of our craft, ensuring each gift carries the love it's meant to express."
       },
       {
-        "title": "Personalization",
-        "description": "We believe in the power of personal touches and work closely with clients to create unique, meaningful gifts."
+        "icon": "Leaf",
+        "title": "Sustainable Practices",
+        "description": "We are committed to environmental responsibility, using eco-friendly materials and sustainable crafting methods in all our creations."
       },
       {
-        "title": "Sustainability",
-        "description": "We use eco-friendly materials and sustainable practices whenever possible to protect our planet."
+        "icon": "Users",
+        "title": "Community Connection",
+        "description": "We believe in supporting local artisans and giving back to our community through workshops and charitable partnerships."
       },
       {
-        "title": "Customer Love",
-        "description": "Your happiness is our priority. We go above and beyond to ensure every gift exceeds expectations."
+        "icon": "Ribbon",
+        "title": "Lasting Memories",
+        "description": "Our mission is to create heirloom-quality gifts that will be treasured for generations, preserving precious memories forever."
       }
     ]
   }

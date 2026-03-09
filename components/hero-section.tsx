@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Heart, Star, Gift } from "lucide-react"
-import { getSiteHero } from "@/lib/data-loader"
+import { getSiteConfig } from "@/lib/data-loader"
 
 export function HeroSection() {
-  const hero = getSiteHero()
+  const siteConfig = getSiteConfig()
+  const hero = siteConfig.hero
   return (
     <section className="relative bg-white overflow-hidden">
       <div 

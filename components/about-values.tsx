@@ -1,5 +1,5 @@
 import { Heart, HandHeart, Clock, Leaf, Users, Ribbon } from "lucide-react"
-import { getTestimonials, getAboutValues } from "@/lib/data-loader"
+import { getTestimonials, getAbout } from "@/lib/data-loader"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
@@ -18,7 +18,9 @@ const getIcon = (iconName: string) => {
 }
 
 export function AboutValues() {
-  const { whyChoose, values } = getAboutValues()
+  const about = getAbout()
+  const whyChoose = about.whyChoose
+  const values = about.values
   return (
     <>
       {/* Why Choose Section */}

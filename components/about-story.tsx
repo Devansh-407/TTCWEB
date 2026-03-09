@@ -1,7 +1,8 @@
-import { getAboutStory } from "@/lib/data-loader"
+import { getAbout } from "@/lib/data-loader"
 
 export function AboutStory() {
-  const story = getAboutStory()
+  const about = getAbout()
+  const story = about.story
   return (
     <section id="journey" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

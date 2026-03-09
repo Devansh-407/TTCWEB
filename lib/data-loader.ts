@@ -4,17 +4,11 @@
 import productsData from '../data/products.json'
 import categoriesData from '../data/categories.json'
 import occasionsData from '../data/occasions.json'
-import topSellingData from '../data/top-selling.json'
 import aboutData from '../data/about.json'
 import contactData from '../data/contact.json'
 import siteConfigData from '../data/site-config.json'
 import testimonialsData from '../data/testimonials.json'
-import aboutValuesData from '../data/about-values.json'
-import navigationData from '../data/navigation.json'
-import siteHeroData from '../data/site-hero.json'
 import footerData from '../data/footer.json'
-import aboutHeroData from '../data/about-hero.json'
-import aboutStoryData from '../data/about-story.json'
 
 // Type definitions for JSON data
 interface Product {
@@ -75,31 +69,24 @@ interface Testimonial {
 // Export functions to get data from JSON files
 export function getProducts(): Product[] {
   return productsData.products as Product[]
-}
-
 export function getCategories(): Category[] {
   return categoriesData.categories
 }
 
-export function getOccasions(): Occasion[] {
+export function getOccasions() {
   return occasionsData.occasions
 }
 
-export function getTopSellingProductIds(): string[] {
-  return topSellingData.topSelling.productIds
+export function getTestimonials(): Testimonial[] {
+  return testimonialsData.testimonials
 }
 
-export function getTopSellingProducts(): Product[] {
-  const topIds = getTopSellingProductIds()
-  const allProducts = getProducts()
-  return allProducts.filter(product => topIds.includes(product.id))
-}
-
-export function getAboutData() {
+// New functions for dynamic data (merged files)
+export function getAbout() {
   return aboutData.about
 }
 
-export function getContactData() {
+export function getContact() {
   return contactData.contact
 }
 
@@ -107,37 +94,14 @@ export function getSiteConfig() {
   return siteConfigData.siteConfig
 }
 
-export function getTestimonials(): Testimonial[] {
-  return testimonialsData.testimonials
-}
-
-// New functions for dynamic data
-export function getAboutValues() {
-  return aboutValuesData
-}
-
-export function getNavigationItems() {
-  return navigationData.navItems
-}
-
-export function getContact() {
-  return contactData.contact
-}
-
-export function getSiteHero() {
-  return siteHeroData.hero
-}
-
 export function getFooter() {
   return footerData.footer
 }
 
-export function getAboutHero() {
-  return aboutHeroData.hero
-}
-
-export function getAboutStory() {
-  return aboutStoryData.story
+export function getTopSelling() {
+  const products = getProducts()
+  const topSellingIds = productsData.topSelling.productIds
+  return products.filter(product => topSellingIds.includes(product.id))
 }
 
 // Helper function to get product by ID

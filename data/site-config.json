@@ -1,12 +1,14 @@
 {
-  "_instructions": "SISTER: Update your website basic information here.",
+  "_instructions": "SISTER: Update your complete website configuration here. Everything about your website in one place!",
   "_fields": {
     "siteName": "Your business name",
-    "tagline": "Your business tagline",
+    "tagline": "Your business tagline", 
     "description": "Website description for SEO",
     "logo": "Logo filename in /public folder",
     "favicon": "Favicon filename in /public folder",
-    "navigation": "Main navigation menu items"
+    "hero": "Homepage hero section content",
+    "navigation": "Main navigation menu items",
+    "seo": "SEO settings"
   },
   "siteConfig": {
     "siteName": "The Tohfa Creations",
@@ -14,9 +16,12 @@
     "description": "Handcrafted with love, personalized with care. Find the perfect gift to celebrate life's most precious moments.",
     "logo": "/logo.png",
     "favicon": "/favicon.ico",
-    "seo": {
-      "keywords": "handmade gifts, personalized gifts, custom gifts, anniversary gifts, birthday gifts, wedding gifts, handmade crafts",
-      "author": "The Tohfa Creations"
+    "hero": {
+      "title": "The Tohfa Creations",
+      "subtitle": "One Stop Gifting Solution",
+      "description": "Create unforgettable moments with our bespoke handcrafted gifts. Each piece is artistically designed to tell stories and spread joy to celebrate life's most precious milestones.",
+      "backgroundImage": "/hero.bg.png",
+      "browseGiftsText": "Browse Gifts"
     },
     "navigation": [
       {
@@ -35,6 +40,10 @@
         "name": "Contact",
         "href": "/contact"
       }
-    ]
+    ],
+    "seo": {
+      "keywords": "handmade gifts, personalized gifts, custom gifts, anniversary gifts, birthday gifts, wedding gifts, handmade crafts",
+      "author": "The Tohfa Creations"
+    }
   }
 }
