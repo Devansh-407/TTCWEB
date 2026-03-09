@@ -1,0 +1,17 @@
+{
+  "_instructions": "SISTER: Update your homepage hero section content here.",
+  "_fields": {
+    "title": "Main hero title",
+    "subtitle": "Hero subtitle/tagline",
+    "description": "Hero description text",
+    "backgroundImage": "Background image filename",
+    "browseGiftsText": "Browse Gifts button text"
+  },
+  "hero": {
+    "title": "The Tohfa Creations",
+    "subtitle": "One Stop Gifting Solution",
+    "description": "Create unforgettable moments with our bespoke handcrafted gifts. Each piece is artistically designed to tell stories and spread joy to celebrate life's most precious milestones.",
+    "backgroundImage": "/hero.bg.png",
+    "browseGiftsText": "Browse Gifts"
+  }
+}

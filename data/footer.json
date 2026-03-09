@@ -1,0 +1,34 @@
+{
+  "_instructions": "SISTER: Update your website footer content here.",
+  "_fields": {
+    "companyName": "Company name",
+    "companyDescription": "Company description",
+    "quickLinksTitle": "Quick Links section title",
+    "contactInfoTitle": "Contact Info section title",
+    "followUsTitle": "Follow Us section title",
+    "socialMedia": "Social media links",
+    "copyright": "Copyright text"
+  },
+  "footer": {
+    "companyName": "The Tohfa Creations",
+    "companyDescription": "Creating meaningful connections through handcrafted gifts and personalized experiences.",
+    "quickLinksTitle": "Quick Links",
+    "contactInfoTitle": "Contact Info",
+    "followUsTitle": "Follow Us",
+    "socialMedia": [
+      {
+        "platform": "Facebook",
+        "link": "https://facebook.com/tohfacreations"
+      },
+      {
+        "platform": "Instagram", 
+        "link": "https://instagram.com/tohfacreations"
+      },
+      {
+        "platform": "Twitter",
+        "link": "https://twitter.com/tohfacreations"
+      }
+    ],
+    "copyright": "&copy; 2025 The Tohfa Creations. All rights reserved."
+  }
+}

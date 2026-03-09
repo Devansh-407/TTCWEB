@@ -12,6 +12,10 @@ import testimonialsData from '../data/testimonials.json'
 import aboutValuesData from '../data/about-values.json'
 import contactInfoData from '../data/contact-info.json'
 import navigationData from '../data/navigation.json'
+import siteHeroData from '../data/site-hero.json'
+import footerData from '../data/footer.json'
+import aboutHeroData from '../data/about-hero.json'
+import aboutStoryData from '../data/about-story.json'
 
 // Type definitions for JSON data
 interface Product {
@@ -123,6 +127,22 @@ export function getNavigationItems() {
 
 export function getContact() {
   return contactData.contact
+}
+
+export function getSiteHero() {
+  return siteHeroData.hero
+}
+
+export function getFooter() {
+  return footerData.footer
+}
+
+export function getAboutHero() {
+  return aboutHeroData.hero
+}
+
+export function getAboutStory() {
+  return aboutStoryData.story
 }
 
 // Helper function to get product by ID
