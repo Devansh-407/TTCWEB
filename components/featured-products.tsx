@@ -2,11 +2,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, ShoppingCart } from "lucide-react"
-import { getTopSellingProducts } from "@/lib/data-loader"
+import { getTopSelling } from "@/lib/data-loader"
 import Link from "next/link"
 
 export function FeaturedProducts() {
-  const featuredProducts = getTopSellingProducts().slice(0, 6)
+  const featuredProducts = getTopSelling().slice(0, 6)
 
   return (
     <section className="py-16 bg-gray-50">

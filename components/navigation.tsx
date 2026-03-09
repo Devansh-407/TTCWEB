@@ -9,7 +9,7 @@ import { AnimatedLogo } from "@/components/animated-logo"
 import { useCart } from "@/lib/cart-store"
 import { useFavourites } from "@/lib/favourites-store"
 import { useAuth } from "@/lib/auth-store"
-import { getNavigationItems } from "@/lib/data-loader"
+import { getSiteConfig } from "@/lib/data-loader"
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +18,8 @@ export function Navigation() {
   const cart = useCart()
   const favourites = useFavourites()
   const { user, isAuthenticated, logout } = useAuth()
-  const navItems = getNavigationItems()
+  const siteConfig = getSiteConfig()
+  const navItems = siteConfig.navigation
 
   return (
     <nav className="bg-white border-b sticky top-0 z-50">
