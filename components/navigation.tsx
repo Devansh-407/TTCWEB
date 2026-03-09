@@ -161,11 +161,14 @@ export function Navigation() {
                   )}
                 </>
               ) : (
+                {/* Sign In Button - HIDDEN FOR FUTURE USE */}
+                {/*
                 <Button variant="ghost" size="sm" asChild>
                   <Link href="/signin">
                     <User className="h-6 w-6" />
                   </Link>
                 </Button>
+                */}
               )}
             </div>
             */}
@@ -233,11 +236,14 @@ export function Navigation() {
                     </button>
                   </>
                 ) : (
+                  {/* Mobile Sign In Button - HIDDEN FOR FUTURE USE */}
+                  {/*
                   <Button variant="outline" asChild className="w-full">
                     <Link href="/signin" onClick={() => setIsMenuOpen(false)}>
                       Sign In
                     </Link>
                   </Button>
+                  */}
                 )}
               </div>
               */}
