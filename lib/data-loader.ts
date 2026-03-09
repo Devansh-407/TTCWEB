@@ -69,6 +69,8 @@ interface Testimonial {
 // Export functions to get data from JSON files
 export function getProducts(): Product[] {
   return productsData.products as Product[]
+}
+
 export function getCategories(): Category[] {
   return categoriesData.categories
 }
