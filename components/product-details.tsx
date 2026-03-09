@@ -159,11 +159,27 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Features</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Handcrafted with premium materials</li>
-                  <li>• Personalized to your specifications</li>
-                  <li>• Made by skilled artisans</li>
-                  <li>• Carefully packaged for gifting</li>
-                  <li>• 30-day satisfaction guarantee</li>
+                  {product.features && product.features.map((feature: string, index: number) => (
+                    <li key={index}>• {feature}</li>
+                  ))}
+                  {product.specifications && (
+                    <li className="font-semibold mt-3">Specifications:</li>
+                  )}
+                  {product.specifications && Object.entries(product.specifications).map(([key, value]: [string, string], index: number) => (
+                    <li key={index} className="ml-4">• {key}: {value}</li>
+                  ))}
+                  {product.shipping && (
+                    <li className="font-semibold mt-3">Shipping:</li>
+                  )}
+                  {product.shipping && Object.entries(product.shipping).map(([key, value]: [string, string], index: number) => (
+                    <li key={index} className="ml-4">• {key}: {value}</li>
+                  ))}
+                  {product.careInstructions && (
+                    <li className="font-semibold mt-3">Care Instructions:</li>
+                  )}
+                  {product.careInstructions && (
+                    <li className="ml-4">• {product.careInstructions}</li>
+                  )}
                 </ul>
               </CardContent>
             </Card>
