@@ -14,6 +14,12 @@
       "href": "/gifts?occasion=anniversary"
     },
     {
+      "name": "family function",
+      "description": "Celebrate your love story with personalized keepsakes that capture your cherished memories.",
+      "image": "/anniversary-gifts-romantic-setup.jpg",
+      "href": "/gifts?occasion=family function"
+    },
+    {
       "name": "Birthday",
       "description": "Make their special day unforgettable with unique, personalized gifts tailored to their personality.",
       "image": "/birthday-celebration-colorful-gifts.jpg",

@@ -1,6 +1,6 @@
 "use client"
 
-import { getCategories } from "@/lib/data-loader"
+import { getOccasions } from "@/lib/data-loader"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -9,7 +9,7 @@ export function CategoriesSection() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [canScrollRight, setCanScrollRight] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const categories = getCategories()
+  const occasions = getOccasions()
 
   useEffect(() => {
     const container = containerRef.current
@@ -80,22 +80,22 @@ export function CategoriesSection() {
             }}
             onScroll={(e) => setScrollPosition(e.currentTarget.scrollLeft)}
           >
-            {categories.map((category, index) => (
+            {occasions.map((occasion, index) => (
               <div key={index} className="flex-none w-80">
-                <Link href={category.href} className="group block">
+                <Link href={occasion.href} className="group block">
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow h-full">
                     <div className="h-48 overflow-hidden">
                       <img
-                        src={category.image || "/placeholder.svg"}
-                        alt={category.name}
+                        src={occasion.image || "/placeholder.svg"}
+                        alt={occasion.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                        {category.name}
+                        {occasion.name}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{category.description}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{occasion.description}</p>
                     </div>
                   </div>
                 </Link>
