@@ -10,7 +10,6 @@ import contactData from '../data/contact.json'
 import siteConfigData from '../data/site-config.json'
 import testimonialsData from '../data/testimonials.json'
 import aboutValuesData from '../data/about-values.json'
-import contactInfoData from '../data/contact-info.json'
 import navigationData from '../data/navigation.json'
 import siteHeroData from '../data/site-hero.json'
 import footerData from '../data/footer.json'
@@ -115,10 +114,6 @@ export function getTestimonials(): Testimonial[] {
 // New functions for dynamic data
 export function getAboutValues() {
   return aboutValuesData
-}
-
-export function getContactInfo() {
-  return contactInfoData.contactItems
 }
 
 export function getNavigationItems() {
