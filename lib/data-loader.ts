@@ -11,12 +11,12 @@ import testimonialsData from '../data/testimonials.json'
 import footerData from '../data/footer.json'
 
 // Type definitions for JSON data
-interface Product {
+export interface Product {
   id: string
   name: string
   description: string
-  price: number
-  originalPrice?: number
+  price?: number // Optional - only for products without sizes
+  originalPrice?: number // Optional - only for products without sizes
   image?: string // Backward compatibility
   images?: string[] // New field - array of images
   gif?: string
@@ -27,9 +27,17 @@ interface Product {
   reviewCount: number
   customizationLevel: "basic" | "standard" | "premium"
   inStock: boolean
+  sizes?: {
+    id: string
+    name: string
+    price: number
+    originalPrice?: number
+    inStock: boolean
+    description?: string
+  }[] // Size variants array
   specifications?: {
     material?: string
-    size?: string
+    size?: string // Only for products without sizes
     weight?: string
     color?: string
     [key: string]: any

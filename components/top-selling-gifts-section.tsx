@@ -5,6 +5,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { getTopSelling } from "@/lib/data-loader"
 
+// Format price in INR
+function formatPrice(price: number | undefined) {
+  if (typeof price !== 'number' || isNaN(price)) {
+    return '₹0'
+  }
+  return `₹${price.toLocaleString('en-IN')}`
+}
+
+// Get correct price from product (handles size variants)
+function getProductPrice(product: any) {
+  if (product.sizes && product.sizes.length > 0) {
+    return product.sizes[0].price
+  }
+  return product.price || 0
+}
+
 // Get top selling products (highest rated/most popular)
 const topSellingProducts = getTopSelling()
   .filter(product => product.rating >= 4.7)
@@ -95,9 +111,9 @@ export function TopSellingGiftsSection() {
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      {product.originalPrice && product.originalPrice > product.price && (
+                      {product.originalPrice && product.originalPrice > getProductPrice(product) && (
                         <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm font-semibold">
-                          {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                          {Math.round(((product.originalPrice - getProductPrice(product)) / product.originalPrice) * 100)}% OFF
                         </div>
                       )}
                     </div>
@@ -127,9 +143,9 @@ export function TopSellingGiftsSection() {
                       {/* Price */}
                       <div className="flex items-center justify-between">
                         <div>
-                          <span className="text-2xl font-bold text-gray-900">₹{product.price.toLocaleString()}</span>
-                          {product.originalPrice && product.originalPrice > product.price && (
-                            <span className="ml-2 text-lg text-gray-500 line-through">₹{product.originalPrice.toLocaleString()}</span>
+                          <span className="text-2xl font-bold text-gray-900">{formatPrice(getProductPrice(product))}</span>
+                          {product.originalPrice && product.originalPrice > getProductPrice(product) && (
+                            <span className="ml-2 text-lg text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                           )}
                         </div>
                         <span className="text-sm text-green-600 font-medium">In Stock</span>

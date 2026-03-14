@@ -5,6 +5,22 @@ import { Star, ShoppingCart } from "lucide-react"
 import { getTopSelling } from "@/lib/data-loader"
 import Link from "next/link"
 
+// Format price in INR
+function formatPrice(price: number | undefined) {
+  if (typeof price !== 'number' || isNaN(price)) {
+    return '₹0'
+  }
+  return `₹${price.toLocaleString('en-IN')}`
+}
+
+// Get correct price from product (handles size variants)
+function getProductPrice(product: any) {
+  if (product.sizes && product.sizes.length > 0) {
+    return product.sizes[0].price
+  }
+  return product.price || 0
+}
+
 export function FeaturedProducts() {
   const featuredProducts = getTopSelling().slice(0, 6)
 
@@ -29,7 +45,7 @@ export function FeaturedProducts() {
                 />
                 {product.originalPrice && (
                   <Badge className="absolute top-3 left-3 bg-purple-500 text-white">
-                    Save ₹{product.originalPrice - product.price}
+                    Save ₹{product.originalPrice - getProductPrice(product)}
                   </Badge>
                 )}
               </div>
@@ -59,9 +75,9 @@ export function FeaturedProducts() {
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-gray-900">₹{product.price.toLocaleString()}</span>
+                      <span className="text-2xl font-bold text-gray-900">{formatPrice(getProductPrice(product))}</span>
                       {product.originalPrice && (
-                        <span className="text-lg text-gray-500 line-through">₹{product.originalPrice.toLocaleString()}</span>
+                        <span className="text-lg text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                       )}
                     </div>
                     <Badge variant="secondary" className="text-xs">

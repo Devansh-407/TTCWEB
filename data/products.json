@@ -24,15 +24,13 @@
   "topSelling": {
     "title": "Top Selling Gifts",
     "description": "Discover our most loved and highly-rated gifts that have brought joy to countless celebrations.",
-    "productIds": ["1", "2", "3", "4", "5", "6", "7", "8"]
+    "productIds": ["1", "2", "3", "4", "5"]
   },
   "products": [
     {
       "id": "1",
       "name": "Vintage Rose Jewelry Box",
       "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
-      "price": 7499,
-      "originalPrice": 9999,
       "images": [
         "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
         "/vintage-wooden-jewelry-box-side-view.jpg",
@@ -46,9 +44,34 @@
       "reviewCount": 127,
       "customizationLevel": "premium",
       "inStock": true,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 5499,
+          "originalPrice": 6999,
+          "inStock": true,
+          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 7499,
+          "originalPrice": 9999,
+          "inStock": true,
+          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 9999,
+          "originalPrice": 12999,
+          "inStock": true,
+          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+        }
+      ],
       "specifications": {
         "material": "Premium Wood with Velvet Interior",
-        "size": "8 x 6 x 4 inches",
         "weight": "500 grams",
         "color": "Natural Wood Finish with Red Roses"
       },
@@ -69,203 +92,318 @@
     },
     {
       "id": "2",
-      "name": "Memory Lane Album",
-      "description": "Leather-bound photo album with personalized cover and acid-free pages.",
-      "price": 5499,
-      "originalPrice": 7199,
+      "name": "Vintage Rose Jewelry Box",
+      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
       "images": [
-        "/leather-photo-album-with-personalized-cover.jpg",
-        "/leather-photo-album-open-view.jpg",
-        "/leather-photo-album-detail-view.jpg"
+        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
+        "/vintage-wooden-jewelry-box-side-view.jpg",
+        "/vintage-wooden-jewelry-box-open-view.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-hamper",
+      "category": "gift-box",
       "occasion": "anniversary",
-      "rating": 4.9,
-      "reviewCount": 89,
-      "customizationLevel": "standard",
-      "inStock": true
+      "rating": 4.8,
+      "reviewCount": 127,
+      "customizationLevel": "premium",
+      "inStock": true,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 5499,
+          "originalPrice": 6999,
+          "inStock": true,
+          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 7499,
+          "originalPrice": 9999,
+          "inStock": true,
+          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 9999,
+          "originalPrice": 12999,
+          "inStock": true,
+          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+        }
+      ],
+      "specifications": {
+        "material": "Premium Wood with Velvet Interior",
+        "weight": "500 grams",
+        "color": "Natural Wood Finish with Red Roses"
+      },
+      "shipping": {
+        "delivery": "5-7 business days",
+        "packaging": "Premium gift box included",
+        "shippingCost": "Free shipping above ₹999"
+      },
+      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
+      "features": [
+        "Handcrafted by skilled artisans",
+        "Intricate rose pattern carving",
+        "Soft velvet interior lining",
+        "Brass hinges and clasp",
+        "Personalization available",
+        "Gift wrapping included"
+      ]
     },
     {
       "id": "3",
-      "name": "Custom Engraved Board",
-      "description": "Personalized bamboo cutting board with custom family name engraving.",
-      "price": 10499,
-      "originalPrice": 13499,
+      "name": "Vintage Rose Jewelry Box",
+      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
       "images": [
-        "/bamboo-cutting-board-with-family-name-engraving.jpg",
-        "/bamboo-cutting-board-close-up.jpg",
-        "/bamboo-cutting-board-in-use.jpg"
+        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
+        "/vintage-wooden-jewelry-box-side-view.jpg",
+        "/vintage-wooden-jewelry-box-open-view.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "frame",
-      "occasion": "wedding",
-      "rating": 4.7,
-      "reviewCount": 156,
+      "category": "gift-box",
+      "occasion": "anniversary",
+      "rating": 4.8,
+      "reviewCount": 127,
       "customizationLevel": "premium",
-      "inStock": true
+      "inStock": true,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 5499,
+          "originalPrice": 6999,
+          "inStock": true,
+          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 7499,
+          "originalPrice": 9999,
+          "inStock": true,
+          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 9999,
+          "originalPrice": 12999,
+          "inStock": true,
+          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+        }
+      ],
+      "specifications": {
+        "material": "Premium Wood with Velvet Interior",
+        "weight": "500 grams",
+        "color": "Natural Wood Finish with Red Roses"
+      },
+      "shipping": {
+        "delivery": "5-7 business days",
+        "packaging": "Premium gift box included",
+        "shippingCost": "Free shipping above ₹999"
+      },
+      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
+      "features": [
+        "Handcrafted by skilled artisans",
+        "Intricate rose pattern carving",
+        "Soft velvet interior lining",
+        "Brass hinges and clasp",
+        "Personalization available",
+        "Gift wrapping included"
+      ]
     },
     {
       "id": "4",
-      "name": "Ballerina Music Box",
-      "description": "Custom-made music box with hand-painted ballerina and personalized melody.",
-      "price": 6299,
-      "originalPrice": 7999,
+      "name": "Vintage Rose Jewelry Box",
+      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
       "images": [
-        "/ballerina-music-box-hand-painted.jpg",
-        "/ballerina-music-box-side-view.jpg",
-        "/ballerina-music-box-detail.jpg"
+        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
+        "/vintage-wooden-jewelry-box-side-view.jpg",
+        "/vintage-wooden-jewelry-box-open-view.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "miniature",
-      "occasion": "birthday",
-      "rating": 4.6,
-      "reviewCount": 94,
-      "customizationLevel": "standard",
-      "inStock": true
+      "category": "gift-box",
+      "occasion": "anniversary",
+      "rating": 4.8,
+      "reviewCount": 127,
+      "customizationLevel": "premium",
+      "inStock": true,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 5499,
+          "originalPrice": 6999,
+          "inStock": true,
+          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 7499,
+          "originalPrice": 9999,
+          "inStock": true,
+          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 9999,
+          "originalPrice": 12999,
+          "inStock": true,
+          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+        }
+      ],
+      "specifications": {
+        "material": "Premium Wood with Velvet Interior",
+        "weight": "500 grams",
+        "color": "Natural Wood Finish with Red Roses"
+      },
+      "shipping": {
+        "delivery": "5-7 business days",
+        "packaging": "Premium gift box included",
+        "shippingCost": "Free shipping above ₹999"
+      },
+      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
+      "features": [
+        "Handcrafted by skilled artisans",
+        "Intricate rose pattern carving",
+        "Soft velvet interior lining",
+        "Brass hinges and clasp",
+        "Personalization available",
+        "Gift wrapping included"
+      ]
     },
     {
       "id": "5",
-      "name": "Golden Edge Dish",
-      "description": "Hand-thrown ceramic jewelry dish with 24k gold rim detailing.",
-      "price": 12499,
-      "originalPrice": 14999,
+      "name": "Vintage Rose Jewelry Box",
+      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
       "images": [
-        "/ceramic-jewelry-dish-with-gold-rim.jpg",
-        "/ceramic-jewelry-dish-close-up.jpg",
-        "/ceramic-jewelry-dish-in-use.jpg"
+        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
+        "/vintage-wooden-jewelry-box-side-view.jpg",
+        "/vintage-wooden-jewelry-box-open-view.jpg"
       ],
       "gif": "",
       "video": "",
       "category": "gift-box",
       "occasion": "anniversary",
-      "rating": 4.7,
-      "reviewCount": 203,
-      "customizationLevel": "premium",
-      "inStock": true
-    },
-    {
-      "id": "6",
-      "name": "Family Memory Frame",
-      "description": "Custom engraved wooden frame with family name and special date.",
-      "price": 4599,
-      "originalPrice": 6299,
-      "images": [
-        "/wooden-family-photo-frame-with-engraving.jpg",
-        "/wooden-family-photo-frame-close-up.jpg",
-        "/wooden-family-photo-frame-display.jpg"
-      ],
-      "gif": "",
-      "video": "",
-      "category": "frame",
-      "occasion": "wedding",
       "rating": 4.8,
-      "reviewCount": 167,
-      "customizationLevel": "basic",
-      "inStock": true
-    },
-    {
-      "id": "7",
-      "name": "Memory Albums",
-      "description": "Beautifully crafted photo albums to preserve your precious memories.",
-      "price": 6999,
-      "originalPrice": 8999,
-      "images": [
-        "/memory-photo-album-scrapbook.jpg",
-        "/memory-photo-album-open.jpg",
-        "/memory-photo-album-detail.jpg"
-      ],
-      "gif": "",
-      "video": "",
-      "category": "gift-hamper",
-      "occasion": "anniversary",
-      "rating": 4.9,
-      "reviewCount": 234,
+      "reviewCount": 127,
       "customizationLevel": "premium",
-      "inStock": true
-    },
-    {
-      "id": "8",
-      "name": "Custom Photo Books",
-      "description": "Personalized photo books with premium printing and binding.",
-      "price": 4499,
-      "originalPrice": 5999,
-      "images": [
-        "/leather-photo-album-with-personalized-cover.jpg",
-        "/leather-photo-album-open-view.jpg",
-        "/leather-photo-album-pages.jpg"
+      "inStock": true,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 5499,
+          "originalPrice": 6999,
+          "inStock": true,
+          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 7499,
+          "originalPrice": 9999,
+          "inStock": true,
+          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 9999,
+          "originalPrice": 12999,
+          "inStock": true,
+          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+        }
       ],
-      "gif": "",
-      "video": "",
-      "category": "gift-hamper",
-      "occasion": "birthday",
-      "rating": 4.7,
-      "reviewCount": 189,
-      "customizationLevel": "standard",
-      "inStock": true
+      "specifications": {
+        "material": "Premium Wood with Velvet Interior",
+        "weight": "500 grams",
+        "color": "Natural Wood Finish with Red Roses"
+      },
+      "shipping": {
+        "delivery": "5-7 business days",
+        "packaging": "Premium gift box included",
+        "shippingCost": "Free shipping above ₹999"
+      },
+      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
+      "features": [
+        "Handcrafted by skilled artisans",
+        "Intricate rose pattern carving",
+        "Soft velvet interior lining",
+        "Brass hinges and clasp",
+        "Personalization available",
+        "Gift wrapping included"
+      ]
     },
     {
-      "id": "9",
-      "name": "Anniversary Gifts",
-      "description": "Romantic anniversary gift sets with personalized touches.",
-      "price": 8999,
-      "originalPrice": 11999,
+      "id": "5",
+      "name": "Vintage Rose Jewelry Box",
+      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
       "images": [
-        "/anniversary-gifts-romantic-setup.jpg",
-        "/anniversary-gifts-close-up.jpg",
-        "/anniversary-gifts-detail.jpg"
-      ],
-      "gif": "",
-      "video": "",
-      "category": "bouquet",
-      "occasion": "anniversary",
-      "rating": 4.9,
-      "reviewCount": 156,
-      "customizationLevel": "premium",
-      "inStock": true
-    },
-    {
-      "id": "10",
-      "name": "Romantic Proposal Box",
-      "description": "Elegant proposal box with ring compartment and personalized message.",
-      "price": 15499,
-      "originalPrice": 18999,
-      "images": [
-        "/romantic-proposal-setup-with-roses.jpg",
-        "/romantic-proposal-box-open.jpg",
-        "/romantic-proposal-detail.jpg"
+        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
+        "/vintage-wooden-jewelry-box-side-view.jpg",
+        "/vintage-wooden-jewelry-box-open-view.jpg"
       ],
       "gif": "",
       "video": "",
       "category": "gift-box",
-      "occasion": "proposal",
-      "rating": 4.9,
-      "reviewCount": 78,
-      "customizationLevel": "premium",
-      "inStock": true
-    },
-    {
-      "id": "11",
-      "name": "Graduation Success Frame",
-      "description": "Custom graduation frame with diploma space and achievement medals display.",
-      "price": 5499,
-      "originalPrice": 7299,
-      "images": [
-        "/wooden-family-photo-frame-with-engraving.jpg",
-        "/graduation-frame-display.jpg",
-        "/graduation-frame-detail.jpg"
-      ],
-      "gif": "",
-      "video": "",
-      "category": "frame",
-      "occasion": "graduation",
+      "occasion": "anniversary",
       "rating": 4.8,
-      "reviewCount": 92,
-      "customizationLevel": "standard",
-      "inStock": true
+      "reviewCount": 127,
+      "customizationLevel": "premium",
+      "inStock": true,
+      "sizes": [
+        {
+          "id": "small",
+          "name": "Small",
+          "price": 5499,
+          "originalPrice": 6999,
+          "inStock": true,
+          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "price": 7499,
+          "originalPrice": 9999,
+          "inStock": true,
+          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "price": 9999,
+          "originalPrice": 12999,
+          "inStock": true,
+          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+        }
+      ],
+      "specifications": {
+        "material": "Premium Wood with Velvet Interior",
+        "weight": "500 grams",
+        "color": "Natural Wood Finish with Red Roses"
+      },
+      "shipping": {
+        "delivery": "5-7 business days",
+        "packaging": "Premium gift box included",
+        "shippingCost": "Free shipping above ₹999"
+      },
+      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
+      "features": [
+        "Handcrafted by skilled artisans",
+        "Intricate rose pattern carving",
+        "Soft velvet interior lining",
+        "Brass hinges and clasp",
+        "Personalization available",
+        "Gift wrapping included"
+      ]
     }
   ]
 }

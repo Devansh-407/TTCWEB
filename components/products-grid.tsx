@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Star, Heart, MessageCircle } from "lucide-react"
 
 import { getProducts } from "@/lib/data-loader"
+import { Product } from "@/lib/data-loader"
 
 import Link from "next/link"
 
@@ -22,10 +23,19 @@ import { useSearchParams } from "next/navigation"
 
 // Format price in INR
 
-function formatPrice(price: number) {
-
+function formatPrice(price: number | undefined) {
+  if (typeof price !== 'number' || isNaN(price)) {
+    return '₹0'
+  }
   return `₹${price.toLocaleString('en-IN')}`
+}
 
+// Get correct price from product (handles size variants)
+function getProductPrice(product: any) {
+  if (product.sizes && product.sizes.length > 0) {
+    return product.sizes[0].price
+  }
+  return product.price || 0
 }
 
 
@@ -118,7 +128,7 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
     // Create WhatsApp message with product details
 
-    const message = `Hello! I'm interested in this product:\n\n🎁 *${product.name}*\n💰 Price: ${formatPrice(product.price)}\n📝 ${product.description}\n\nCan you provide more details about customization options?`
+    const message = `Hello! I'm interested in this product:\n\n🎁 *${product.name}*\n💰 Price: ${formatPrice(getProductPrice(product))}\n📝 ${product.description}\n\nCan you provide more details about customization options?`
 
     
 
@@ -168,7 +178,7 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
           name: product.name,
 
-          price: product.price,
+          price: getProductPrice(product),
 
           image: product.image || "/placeholder.svg",
 
@@ -312,7 +322,7 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
               <div className="space-y-2">
 
-                <p className="text-lg font-bold text-gray-900">{formatPrice(product.price)}</p>
+                <p className="text-lg font-bold text-gray-900">{formatPrice(getProductPrice(product))}</p>
 
                 <span className="inline-block px-2 py-1 text-xs bg-purple-100 text-purple-800 rounded">
 
