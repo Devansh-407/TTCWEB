@@ -9,12 +9,23 @@ import type { Product } from "@/lib/types"
 import { useState } from "react"
 
 // Format price in INR
-function formatPrice(price: number) {
+function formatPrice(price: number | undefined) {
+  if (!price || typeof price !== 'number') return '₹0'
   return `₹${price.toLocaleString('en-IN')}`
 }
 
+// Get the default price from product (either direct price or first size)
+function getProductPrice(product: any): number {
+  // If product has sizes array, return the first size price
+  if (product.sizes && Array.isArray(product.sizes) && product.sizes.length > 0) {
+    return product.sizes[0].price || 0
+  }
+  // Otherwise return direct price
+  return product.price || 0
+}
+
 interface ProductDetailsProps {
-  product: Product
+  product: any // Using any to support new product structure with sizes, features, etc.
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
@@ -96,12 +107,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <p className="text-gray-700 leading-relaxed">{product.description}</p>
 
               <div className="flex items-center space-x-4">
-                <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price)}</span>
+                <span className="text-3xl font-bold text-gray-900">{formatPrice(getProductPrice(product))}</span>
                 {product.originalPrice && (
                   <span className="text-xl text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                 )}
                 {product.originalPrice && (
-                  <Badge className="bg-green-500 text-white">Save {formatPrice(product.originalPrice - product.price)}</Badge>
+                  <Badge className="bg-green-500 text-white">Save {formatPrice(product.originalPrice - getProductPrice(product))}</Badge>
                 )}
               </div>
             </div>
@@ -165,13 +176,13 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                   {product.specifications && (
                     <li className="font-semibold mt-3">Specifications:</li>
                   )}
-                  {product.specifications && Object.entries(product.specifications).map(([key, value]: [string, string], index: number) => (
+                  {product.specifications && Object.entries(product.specifications).map(([key, value]: [string, any], index: number) => (
                     <li key={index} className="ml-4">• {key}: {value}</li>
                   ))}
                   {product.shipping && (
                     <li className="font-semibold mt-3">Shipping:</li>
                   )}
-                  {product.shipping && Object.entries(product.shipping).map(([key, value]: [string, string], index: number) => (
+                  {product.shipping && Object.entries(product.shipping).map(([key, value]: [string, any], index: number) => (
                     <li key={index} className="ml-4">• {key}: {value}</li>
                   ))}
                   {product.careInstructions && (
