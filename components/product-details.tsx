@@ -144,40 +144,52 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <Card>
                 <CardContent className="p-6 space-y-4">
                   <h3 className="text-lg font-semibold text-gray-900">Select Size</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {product.sizes.map((size: any) => (
-                      <div key={size.id} className="relative">
-                        <input
-                          type="radio"
-                          name="size"
-                          id={size.id}
-                          value={size.id}
-                          checked={selectedSize === size.id}
-                          onChange={(e) => setSelectedSize(e.target.value)}
-                          className="sr-only peer"
-                        />
-                        <label
-                          htmlFor={size.id}
-                          className={`block p-4 border-2 rounded-lg cursor-pointer transition-all peer-checked:border-purple-500 peer-checked:bg-purple-50 hover:border-purple-300 ${
-                            selectedSize === size.id ? 'border-purple-500 bg-purple-50' : 'border-gray-200'
-                          }`}
-                        >
-                          <div className="text-center">
-                            <div className="font-semibold text-gray-900">{size.name}</div>
-                            <div className="text-sm text-gray-600">{size.description}</div>
-                            <div className="mt-2">
-                              <span className="text-lg font-bold text-purple-600">{formatPrice(size.price)}</span>
-                              {size.originalPrice && (
-                                <span className="text-sm text-gray-500 line-through ml-2">{formatPrice(size.originalPrice)}</span>
-                              )}
+                  <div className="space-y-3">
+                    <select
+                      value={selectedSize}
+                      onChange={(e) => setSelectedSize(e.target.value)}
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+                    >
+                      {product.sizes.map((size: any) => (
+                        <option key={size.id} value={size.id}>
+                          {size.name} - {formatPrice(size.price)}
+                          {!size.inStock && ' (Out of Stock)'}
+                        </option>
+                      ))}
+                    </select>
+                    
+                    {/* Selected Size Details */}
+                    {selectedSize && (
+                      <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-200">
+                        {(() => {
+                          const selectedSizeData = product.sizes?.find((s: any) => s.id === selectedSize)
+                          if (!selectedSizeData) return null
+                          
+                          return (
+                            <div className="space-y-2">
+                              <div className="text-sm text-gray-600">
+                                {selectedSizeData.description}
+                              </div>
+                              <div className="flex items-center justify-between">
+                                <div>
+                                  <span className="text-lg font-bold text-purple-600">
+                                    {formatPrice(selectedSizeData.price)}
+                                  </span>
+                                  {selectedSizeData.originalPrice && (
+                                    <span className="text-sm text-gray-500 line-through ml-2">
+                                      {formatPrice(selectedSizeData.originalPrice)}
+                                    </span>
+                                  )}
+                                </div>
+                                {!selectedSizeData.inStock && (
+                                  <span className="text-red-500 font-medium">Out of Stock</span>
+                                )}
+                              </div>
                             </div>
-                            {!size.inStock && (
-                              <div className="text-red-500 text-sm font-medium mt-1">Out of Stock</div>
-                            )}
-                          </div>
-                        </label>
+                          )
+                        })()}
                       </div>
-                    ))}
+                    )}
                   </div>
                 </CardContent>
               </Card>
