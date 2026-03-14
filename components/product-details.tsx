@@ -43,7 +43,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   const handleAddToCart = () => {
     // Get the selected size or default to first size
     const size = selectedSize || (product.sizes && product.sizes[0] ? product.sizes[0].id : "")
-    const sizeName = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.name : ""
+    const sizeName = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.size : ""
     const sizePrice = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.price || getProductPrice(product) : getProductPrice(product)
     
     // Create WhatsApp message with product details
@@ -152,7 +152,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                     >
                       {product.sizes.map((size: any) => (
                         <option key={size.id} value={size.id}>
-                          {size.name} - {formatPrice(size.price)}
+                          {size.size} - {formatPrice(size.price)}
                           {!size.inStock && ' (Out of Stock)'}
                         </option>
                       ))}
