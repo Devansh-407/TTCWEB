@@ -46,28 +46,28 @@
       "inStock": true,
       "sizes": [
         {
-          "id": "small",
-          "name": "Small",
+          "id": "6x4x3",
+          "size": "6 x 4 x 3",
           "price": 5499,
           "originalPrice": 6999,
           "inStock": true,
-          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+          "description": "Perfect for small jewelry items"
         },
         {
-          "id": "medium",
-          "name": "Medium",
+          "id": "8x6x4",
+          "size": "8 x 6 x 4",
           "price": 7499,
           "originalPrice": 9999,
           "inStock": true,
-          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+          "description": "Ideal for most jewelry collections"
         },
         {
-          "id": "large",
-          "name": "Large",
+          "id": "10x8x6",
+          "size": "10 x 8 x 6",
           "price": 9999,
           "originalPrice": 12999,
           "inStock": true,
-          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+          "description": "Spacious for extensive collections"
         }
       ],
       "specifications": {
@@ -109,28 +109,28 @@
       "inStock": true,
       "sizes": [
         {
-          "id": "small",
-          "name": "Small",
+          "id": "6x4x3",
+          "size": "6 x 4 x 3",
           "price": 5499,
           "originalPrice": 6999,
           "inStock": true,
-          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+          "description": "Perfect for small jewelry items"
         },
         {
-          "id": "medium",
-          "name": "Medium",
+          "id": "8x6x4",
+          "size": "8 x 6 x 4",
           "price": 7499,
           "originalPrice": 9999,
           "inStock": true,
-          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+          "description": "Ideal for most jewelry collections"
         },
         {
-          "id": "large",
-          "name": "Large",
+          "id": "10x8x6",
+          "size": "10 x 8 x 6",
           "price": 9999,
           "originalPrice": 12999,
           "inStock": true,
-          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+          "description": "Spacious for extensive collections"
         }
       ],
       "specifications": {
@@ -172,28 +172,28 @@
       "inStock": true,
       "sizes": [
         {
-          "id": "small",
-          "name": "Small",
+          "id": "6x4x3",
+          "size": "6 x 4 x 3",
           "price": 5499,
           "originalPrice": 6999,
           "inStock": true,
-          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+          "description": "Perfect for small jewelry items"
         },
         {
-          "id": "medium",
-          "name": "Medium",
+          "id": "8x6x4",
+          "size": "8 x 6 x 4",
           "price": 7499,
           "originalPrice": 9999,
           "inStock": true,
-          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+          "description": "Ideal for most jewelry collections"
         },
         {
-          "id": "large",
-          "name": "Large",
+          "id": "10x8x6",
+          "size": "10 x 8 x 6",
           "price": 9999,
           "originalPrice": 12999,
           "inStock": true,
-          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+          "description": "Spacious for extensive collections"
         }
       ],
       "specifications": {
@@ -235,28 +235,28 @@
       "inStock": true,
       "sizes": [
         {
-          "id": "small",
-          "name": "Small",
+          "id": "6x4x3",
+          "size": "6 x 4 x 3",
           "price": 5499,
           "originalPrice": 6999,
           "inStock": true,
-          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+          "description": "Perfect for small jewelry items"
         },
         {
-          "id": "medium",
-          "name": "Medium",
+          "id": "8x6x4",
+          "size": "8 x 6 x 4",
           "price": 7499,
           "originalPrice": 9999,
           "inStock": true,
-          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+          "description": "Ideal for most jewelry collections"
         },
         {
-          "id": "large",
-          "name": "Large",
+          "id": "10x8x6",
+          "size": "10 x 8 x 6",
           "price": 9999,
           "originalPrice": 12999,
           "inStock": true,
-          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+          "description": "Spacious for extensive collections"
         }
       ],
       "specifications": {
@@ -298,28 +298,28 @@
       "inStock": true,
       "sizes": [
         {
-          "id": "small",
-          "name": "Small",
+          "id": "6x4x3",
+          "size": "6 x 4 x 3",
           "price": 5499,
           "originalPrice": 6999,
           "inStock": true,
-          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+          "description": "Perfect for small jewelry items"
         },
         {
-          "id": "medium",
-          "name": "Medium",
+          "id": "8x6x4",
+          "size": "8 x 6 x 4",
           "price": 7499,
           "originalPrice": 9999,
           "inStock": true,
-          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+          "description": "Ideal for most jewelry collections"
         },
         {
-          "id": "large",
-          "name": "Large",
+          "id": "10x8x6",
+          "size": "10 x 8 x 6",
           "price": 9999,
           "originalPrice": 12999,
           "inStock": true,
-          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+          "description": "Spacious for extensive collections"
         }
       ],
       "specifications": {
@@ -361,28 +361,28 @@
       "inStock": true,
       "sizes": [
         {
-          "id": "small",
-          "name": "Small",
+          "id": "6x4x3",
+          "size": "6 x 4 x 3",
           "price": 5499,
           "originalPrice": 6999,
           "inStock": true,
-          "description": "Perfect for small jewelry items (6 x 4 x 3 inches)"
+          "description": "Perfect for small jewelry items"
         },
         {
-          "id": "medium",
-          "name": "Medium",
+          "id": "8x6x4",
+          "size": "8 x 6 x 4",
           "price": 7499,
           "originalPrice": 9999,
           "inStock": true,
-          "description": "Ideal for most jewelry collections (8 x 6 x 4 inches)"
+          "description": "Ideal for most jewelry collections"
         },
         {
-          "id": "large",
-          "name": "Large",
+          "id": "10x8x6",
+          "size": "10 x 8 x 6",
           "price": 9999,
           "originalPrice": 12999,
           "inStock": true,
-          "description": "Spacious for extensive collections (10 x 8 x 6 inches)"
+          "description": "Spacious for extensive collections"
         }
       ],
       "specifications": {
