@@ -32,6 +32,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   const [quantity, setQuantity] = useState(1)
   const [customization, setCustomization] = useState("")
   const [selectedImage, setSelectedImage] = useState(0)
+  const [selectedSize, setSelectedSize] = useState(product.sizes && product.sizes.length > 0 ? product.sizes[0].id : "")
 
   const images = product.images || (product.image ? [product.image] : ["/placeholder.svg"])
 
@@ -40,8 +41,13 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   }
 
   const handleAddToCart = () => {
+    // Get the selected size or default to first size
+    const size = selectedSize || (product.sizes && product.sizes[0] ? product.sizes[0].id : "")
+    const sizeName = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.name : ""
+    const sizePrice = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.price || getProductPrice(product) : getProductPrice(product)
+    
     // Create WhatsApp message with product details
-    const message = `Hello! I'm interested in this product:\n\n🎁 *${product.name}*\n💰 Price: ${formatPrice(product.price)}\n📝 ${product.description}\n🔢 Quantity: ${quantity}\n${customization ? `✏️ Customization: ${customization}` : ''}\n\nCan you provide more details about customization options?`
+    const message = `Hello! I'm interested in this product:\n\n🎁 *${product.name}*\n💰 Price: ${formatPrice(sizePrice)}\n📝 ${product.description}\n🔢 Quantity: ${quantity}\n${sizeName ? `📏 Size: ${sizeName}\n` : ''}${customization ? `✏️ Customization: ${customization}` : ''}\n\nCan you provide more details about customization options?`
     
     // Open WhatsApp with product details
     const whatsappUrl = `https://wa.me/6396202262?text=${encodeURIComponent(message)}`
@@ -132,6 +138,50 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </p>
               </CardContent>
             </Card>
+
+            {/* Size Selector */}
+            {product.sizes && product.sizes.length > 0 && (
+              <Card>
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Select Size</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {product.sizes.map((size: any) => (
+                      <div key={size.id} className="relative">
+                        <input
+                          type="radio"
+                          name="size"
+                          id={size.id}
+                          value={size.id}
+                          checked={selectedSize === size.id}
+                          onChange={(e) => setSelectedSize(e.target.value)}
+                          className="sr-only peer"
+                        />
+                        <label
+                          htmlFor={size.id}
+                          className={`block p-4 border-2 rounded-lg cursor-pointer transition-all peer-checked:border-purple-500 peer-checked:bg-purple-50 hover:border-purple-300 ${
+                            selectedSize === size.id ? 'border-purple-500 bg-purple-50' : 'border-gray-200'
+                          }`}
+                        >
+                          <div className="text-center">
+                            <div className="font-semibold text-gray-900">{size.name}</div>
+                            <div className="text-sm text-gray-600">{size.description}</div>
+                            <div className="mt-2">
+                              <span className="text-lg font-bold text-purple-600">{formatPrice(size.price)}</span>
+                              {size.originalPrice && (
+                                <span className="text-sm text-gray-500 line-through ml-2">{formatPrice(size.originalPrice)}</span>
+                              )}
+                            </div>
+                            {!size.inStock && (
+                              <div className="text-red-500 text-sm font-medium mt-1">Out of Stock</div>
+                            )}
+                          </div>
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Quantity and Add to Cart */}
             <div className="space-y-6">
