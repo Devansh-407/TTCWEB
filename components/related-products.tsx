@@ -6,8 +6,19 @@ import { getProducts } from "@/lib/data-loader"
 import Link from "next/link"
 
 // Format price in INR
-function formatPrice(price: number) {
+function formatPrice(price: number | undefined) {
+  if (!price || typeof price !== 'number') return '₹0'
   return `₹${price.toLocaleString('en-IN')}`
+}
+
+// Get the default price from product (either direct price or first size)
+function getProductPrice(product: any): number {
+  // If product has sizes array, return the first size price
+  if (product.sizes && Array.isArray(product.sizes) && product.sizes.length > 0) {
+    return product.sizes[0].price || 0
+  }
+  // Otherwise return direct price
+  return product.price || 0
 }
 
 interface RelatedProductsProps {
@@ -46,7 +57,7 @@ export function RelatedProducts({ currentProductId, category }: RelatedProductsP
                 />
                 {product.originalPrice && (
                   <Badge className="absolute top-3 left-3 bg-purple-500 text-white">
-                    Save {formatPrice(product.originalPrice - product.price)}
+                    Save {formatPrice(product.originalPrice - getProductPrice(product))}
                   </Badge>
                 )}
               </div>
@@ -76,7 +87,7 @@ export function RelatedProducts({ currentProductId, category }: RelatedProductsP
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-gray-900">{formatPrice(product.price)}</span>
+                      <span className="text-2xl font-bold text-gray-900">{formatPrice(getProductPrice(product))}</span>
                       {product.originalPrice && (
                         <span className="text-lg text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                       )}
