@@ -1,9 +1,33 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
 import { getProducts } from "@/lib/data-loader"
 import Link from "next/link"
+import { useState } from "react"
+
+// Truncate text to specified number of lines
+function truncateText(text: string, maxLines: number = 3): { text: string; isTruncated: boolean } {
+  if (!text) return { text: '', isTruncated: false }
+  
+  // Approximate characters per line (adjust based on your design)
+  const charsPerLine = 80
+  const maxChars = maxLines * charsPerLine
+  
+  if (text.length <= maxChars) {
+    return { text, isTruncated: false }
+  }
+  
+  const truncated = text.substring(0, maxChars).trim()
+  const lastSpaceIndex = truncated.lastIndexOf(' ')
+  
+  return {
+    text: lastSpaceIndex > 0 ? truncated.substring(0, lastSpaceIndex) : truncated,
+    isTruncated: true
+  }
+}
 
 // Format price in INR
 function formatPrice(price: number | undefined) {
@@ -31,6 +55,21 @@ export function RelatedProducts({ currentProductId, category }: RelatedProductsP
   const relatedProducts = products
     .filter((product) => product.id !== currentProductId && product.category === category)
     .slice(0, 3)
+
+  // State for tracking expanded descriptions
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set())
+
+  const toggleDescription = (productId: string) => {
+    setExpandedDescriptions(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(productId)) {
+        newSet.delete(productId)
+      } else {
+        newSet.add(productId)
+      }
+      return newSet
+    })
+  }
 
   if (relatedProducts.length === 0) {
     return null
@@ -67,7 +106,41 @@ export function RelatedProducts({ currentProductId, category }: RelatedProductsP
                   <h3 className="text-xl font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                  <div className="text-gray-600 text-sm leading-relaxed">
+                    {(() => {
+                      const isExpanded = expandedDescriptions.has(product.id)
+                      const description = product.description || ''
+                      
+                      if (isExpanded) {
+                        return (
+                          <>
+                            <p>{description}</p>
+                            <button
+                              onClick={() => toggleDescription(product.id)}
+                              className="text-purple-600 hover:text-purple-800 text-xs font-medium mt-1 transition-colors"
+                            >
+                              Read Less
+                            </button>
+                          </>
+                        )
+                      } else {
+                        const { text: truncatedText, isTruncated } = truncateText(description, 3)
+                        return (
+                          <>
+                            <p>{truncatedText}</p>
+                            {isTruncated && (
+                              <button
+                                onClick={() => toggleDescription(product.id)}
+                                className="text-purple-600 hover:text-purple-800 text-xs font-medium mt-1 transition-colors"
+                              >
+                                Read More
+                              </button>
+                            )}
+                          </>
+                        )
+                      }
+                    })()}
+                  </div>
                 </div>
 
                 <div className="flex items-center space-x-2">

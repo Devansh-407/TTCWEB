@@ -24,6 +24,27 @@ function getProductPrice(product: any): number {
   return product.price || 0
 }
 
+// Safe helper functions to handle missing data
+function safeGet(product: any, path: string, defaultValue: any = '') {
+  const keys = path.split('.')
+  let current = product
+  
+  for (const key of keys) {
+    if (current && typeof current === 'object' && key in current) {
+      current = current[key]
+    } else {
+      return defaultValue
+    }
+  }
+  
+  return current || defaultValue
+}
+
+function safeArrayGet(product: any, path: string, defaultValue: any[] = []) {
+  const result = safeGet(product, path, defaultValue)
+  return Array.isArray(result) ? result : defaultValue
+}
+
 interface ProductDetailsProps {
   product: any // Using any to support new product structure with sizes, features, etc.
 }
@@ -32,22 +53,34 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   const [quantity, setQuantity] = useState(1)
   const [customization, setCustomization] = useState("")
   const [selectedImage, setSelectedImage] = useState(0)
-  const [selectedSize, setSelectedSize] = useState(product.sizes && product.sizes.length > 0 ? product.sizes[0].id : "")
+  
+  // Safe initialization with fallbacks
+  const sizes = safeArrayGet(product, 'sizes', [])
+  const [selectedSize, setSelectedSize] = useState(sizes.length > 0 ? sizes[0].id : "")
 
-  const images = product.images || (product.image ? [product.image] : ["/placeholder.svg"])
+  // Safe image handling
+  const images = safeArrayGet(product, 'images', 
+    safeGet(product, 'image') ? [safeGet(product, 'image')] : ["/placeholder.svg"]
+  )
 
   const handleQuantityChange = (change: number) => {
     setQuantity(Math.max(1, quantity + change))
   }
 
   const handleAddToCart = () => {
-    // Get the selected size or default to first size
-    const size = selectedSize || (product.sizes && product.sizes[0] ? product.sizes[0].id : "")
-    const sizeName = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.size : ""
-    const sizePrice = selectedSize ? product.sizes?.find((s: any) => s.id === selectedSize)?.price || getProductPrice(product) : getProductPrice(product)
+    // Safe data extraction with fallbacks
+    const size = selectedSize || (sizes.length > 0 ? sizes[0]?.id : "")
+    const sizeName = selectedSize ? sizes.find((s: any) => s.id === selectedSize)?.size || "" : ""
+    const sizePrice = selectedSize 
+      ? sizes.find((s: any) => s.id === selectedSize)?.price || getProductPrice(product)
+      : getProductPrice(product)
+    
+    // Safe product data
+    const productName = safeGet(product, 'name', 'Unknown Product')
+    const productDescription = safeGet(product, 'description', 'No description available')
     
     // Create WhatsApp message with product details
-    const message = `Hello! I'm interested in this product:\n\n🎁 *${product.name}*\n💰 Price: ${formatPrice(sizePrice)}\n📝 ${product.description}\n🔢 Quantity: ${quantity}\n${sizeName ? `📏 Size: ${sizeName}\n` : ''}${customization ? `✏️ Customization: ${customization}` : ''}\n\nCan you provide more details about customization options?`
+    const message = `Hello! I'm interested in this product:\n\n🎁 *${productName}*\n💰 Price: ${formatPrice(sizePrice)}\n📝 ${productDescription}\n🔢 Quantity: ${quantity}\n${sizeName ? `📏 Size: ${sizeName}\n` : ''}${customization ? `✏️ Customization: ${customization}` : ''}\n\nCan you provide more details about customization options?`
     
     // Open WhatsApp with product details
     const whatsappUrl = `https://wa.me/6396202262?text=${encodeURIComponent(message)}`
@@ -63,7 +96,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             <div className="aspect-square overflow-hidden rounded-lg">
               <img
                 src={images[selectedImage] || "/placeholder.svg"}
-                alt={product.name}
+                alt={safeGet(product, 'name', 'Product')}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -78,7 +111,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 >
                   <img
                     src={image || "/placeholder.svg"}
-                    alt={`${product.name} view ${index + 1}`}
+                    alt={`${safeGet(product, 'name', 'Product')} view ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </button>
@@ -90,47 +123,49 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           <div className="space-y-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Badge variant="secondary">{product.category}</Badge>
-                <Badge className="bg-purple-500 text-white">{product.customizationLevel} customization</Badge>
+                {safeGet(product, 'category') && <Badge variant="secondary">{safeGet(product, 'category')}</Badge>}
+                {safeGet(product, 'customizationLevel') && <Badge className="bg-purple-500 text-white">{safeGet(product, 'customizationLevel')} customization</Badge>}
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{product.name}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{safeGet(product, 'name', 'Unknown Product')}</h1>
 
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${
-                        i < Math.floor(product.rating) ? "text-yellow-400 fill-current" : "text-gray-300"
-                      }`}
-                    />
-                  ))}
+              {safeGet(product, 'rating') && (
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-5 w-5 ${
+                          i < Math.floor(safeGet(product, 'rating', 0)) ? "text-yellow-400 fill-current" : "text-gray-300"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  {safeGet(product, 'reviewCount') && <span className="text-gray-600">({safeGet(product, 'reviewCount')} reviews)</span>}
                 </div>
-                <span className="text-gray-600">({product.reviewCount} reviews)</span>
-              </div>
+              )}
 
-              <p className="text-gray-700 leading-relaxed">{product.description}</p>
+              <p className="text-gray-700 leading-relaxed">{safeGet(product, 'description', 'No description available')}</p>
 
               <div className="flex items-center space-x-4">
                 <span className="text-3xl font-bold text-gray-900">
-                  {selectedSize ? formatPrice(product.sizes?.find((s: any) => s.id === selectedSize)?.price || 0) : formatPrice(getProductPrice(product))}
+                  {selectedSize ? formatPrice(sizes.find((s: any) => s.id === selectedSize)?.price || 0) : formatPrice(getProductPrice(product))}
                 </span>
-                {selectedSize && product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice && (
+                {selectedSize && sizes.find((s: any) => s.id === selectedSize)?.originalPrice && (
                   <span className="text-xl text-gray-500 line-through">
-                    {formatPrice(product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice)}
+                    {formatPrice(sizes.find((s: any) => s.id === selectedSize)?.originalPrice)}
                   </span>
                 )}
-                {!selectedSize && product.originalPrice && (
-                  <span className="text-xl text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
+                {!selectedSize && safeGet(product, 'originalPrice') && (
+                  <span className="text-xl text-gray-500 line-through">{formatPrice(safeGet(product, 'originalPrice'))}</span>
                 )}
-                {selectedSize && product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice && (
+                {selectedSize && sizes.find((s: any) => s.id === selectedSize)?.originalPrice && (
                   <Badge className="bg-green-500 text-white">
-                    Save {formatPrice((product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice || 0) - (product.sizes?.find((s: any) => s.id === selectedSize)?.price || 0))}
+                    Save {formatPrice((sizes.find((s: any) => s.id === selectedSize)?.originalPrice || 0) - (sizes.find((s: any) => s.id === selectedSize)?.price || 0))}
                   </Badge>
                 )}
-                {!selectedSize && product.originalPrice && (
-                  <Badge className="bg-green-500 text-white">Save {formatPrice(product.originalPrice - getProductPrice(product))}</Badge>
+                {!selectedSize && safeGet(product, 'originalPrice') && (
+                  <Badge className="bg-green-500 text-white">Save {formatPrice(safeGet(product, 'originalPrice') - getProductPrice(product))}</Badge>
                 )}
               </div>
             </div>
@@ -152,7 +187,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             </Card>
 
             {/* Size Selector */}
-            {product.sizes && product.sizes.length > 0 && (
+            {sizes.length > 0 && (
               <Card>
                 <CardContent className="p-6 space-y-4">
                   <h3 className="text-lg font-semibold text-gray-900">Select Size</h3>
@@ -162,7 +197,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                       onChange={(e) => setSelectedSize(e.target.value)}
                       className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
                     >
-                      {product.sizes.map((size: any) => (
+                      {sizes.map((size: any) => (
                         <option key={size.id} value={size.id}>
                           {size.size} - {formatPrice(size.price)}
                           {!size.inStock && ' (Out of Stock)'}
@@ -174,13 +209,13 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                     {selectedSize && (
                       <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-200">
                         {(() => {
-                          const selectedSizeData = product.sizes?.find((s: any) => s.id === selectedSize)
+                          const selectedSizeData = sizes.find((s: any) => s.id === selectedSize)
                           if (!selectedSizeData) return null
                           
                           return (
                             <div className="space-y-2">
                               <div className="text-sm text-gray-600">
-                                {selectedSizeData.description}
+                                {selectedSizeData.description || 'Standard size option'}
                               </div>
                               <div className="flex items-center justify-between">
                                 <div>
@@ -242,28 +277,32 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             {/* Product Features */}
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Features</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Details</h3>
                 <ul className="space-y-2 text-gray-700">
-                  {product.features && product.features.map((feature: string, index: number) => (
+                  {safeArrayGet(product, 'features').map((feature: string, index: number) => (
                     <li key={index}>• {feature}</li>
                   ))}
-                  {product.specifications && (
-                    <li className="font-semibold mt-3">Specifications:</li>
+                  {safeGet(product, 'specifications') && Object.keys(safeGet(product, 'specifications')).length > 0 && (
+                    <>
+                      <li className="font-semibold mt-3">Specifications:</li>
+                      {Object.entries(safeGet(product, 'specifications')).map(([key, value]: [string, any], index: number) => (
+                        <li key={index} className="ml-4">• {key}: {value || 'N/A'}</li>
+                      ))}
+                    </>
                   )}
-                  {product.specifications && Object.entries(product.specifications).map(([key, value]: [string, any], index: number) => (
-                    <li key={index} className="ml-4">• {key}: {value}</li>
-                  ))}
-                  {product.shipping && (
-                    <li className="font-semibold mt-3">Shipping:</li>
+                  {safeGet(product, 'shipping') && Object.keys(safeGet(product, 'shipping')).length > 0 && (
+                    <>
+                      <li className="font-semibold mt-3">Shipping:</li>
+                      {Object.entries(safeGet(product, 'shipping')).map(([key, value]: [string, any], index: number) => (
+                        <li key={index} className="ml-4">• {key}: {value || 'N/A'}</li>
+                      ))}
+                    </>
                   )}
-                  {product.shipping && Object.entries(product.shipping).map(([key, value]: [string, any], index: number) => (
-                    <li key={index} className="ml-4">• {key}: {value}</li>
-                  ))}
-                  {product.careInstructions && (
-                    <li className="font-semibold mt-3">Care Instructions:</li>
-                  )}
-                  {product.careInstructions && (
-                    <li className="ml-4">• {product.careInstructions}</li>
+                  {safeGet(product, 'careInstructions') && (
+                    <>
+                      <li className="font-semibold mt-3">Care Instructions:</li>
+                      <li className="ml-4">• {safeGet(product, 'careInstructions')}</li>
+                    </>
                   )}
                 </ul>
               </CardContent>
