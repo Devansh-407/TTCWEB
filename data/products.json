@@ -3,7 +3,7 @@
   "_fields": {
     "id": "Unique product ID (never change existing IDs)",
     "name": "Product name as shown to customers",
-    "description": "Product description for customers",
+    "description": "Product description for customers (short version for gift page cards, full version for product details page)",
     "price": "Price in numbers (e.g., 7499 for ₹7,499)",
     "originalPrice": "Original price before discount (optional)",
     "images": "Array of product images (main image first, then additional views)",
@@ -22,388 +22,413 @@
     "topSelling": "Featured products that appear on homepage"
   },
   "topSelling": {
-    "title": "Top Selling Gifts",
-    "description": "Discover our most loved and highly-rated gifts that have brought joy to countless celebrations.",
-    "productIds": ["1", "2", "3", "4", "5"]
+    "title": "Featured Miniature Frames",
+    "description": "Handcrafted frames for your special moments",
+    "productIds": ["1", "2", "3", "4", "5", "6"]
   },
   "products": [
     {
       "id": "1",
-      "name": "Vintage Rose Jewelry Box",
-      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
+      "name": "Miniature Birthday Living Room",
+      "description": "• Handcrafted miniature frame with living room and birthday setup\n• Beautiful  designed to capture special moments\n• Features a cozy living room scene with birthday cake, décor, and tiny furniture details\n• Perfect birthday gift for friends, partner, family members, or loved ones\n• Ideal for birthday surprises, personalized gifts, and home décor\n• Carefully crafted with fine detailing to create a realistic miniature birthday scene\n• A creative custom miniature frame gift for birthdays and special celebrations\n\nCUSTOMER REQUIREMENTS:-\n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below\n6396202262",
       "images": [
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg"
+        "https://i.imghippo.com/files/jAv9798nTo.jpg",
+        "https://i.imghippo.com/files/lVZS9284XDQ.jpg",
+        "https://i.imghippo.com/files/cYK9764zwI.jpg",
+        "https://i.imghippo.com/files/QpDA2680Pm.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-box",
-      "occasion": "anniversary",
+      "category": "miniature",
+      "occasion": "birthday",
       "rating": 4.8,
-      "reviewCount": 127,
+      "reviewCount": 60,
       "customizationLevel": "premium",
       "inStock": true,
       "sizes": [
         {
-          "id": "6x4x3",
-          "size": "6 x 4 x 3",
-          "price": 5499,
-          "originalPrice": 6999,
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1499,
+          "originalPrice": 1999,
           "inStock": true,
-          "description": "Perfect for small jewelry items"
+          "description": "Compact size perfect for desks and shelves"
         },
         {
-          "id": "8x6x4",
-          "size": "8 x 6 x 4",
-          "price": 7499,
-          "originalPrice": 9999,
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 1999,
+          "originalPrice": 2599,
           "inStock": true,
-          "description": "Ideal for most jewelry collections"
+          "description": "Medium size ideal for wall display"
         },
         {
-          "id": "10x8x6",
-          "size": "10 x 8 x 6",
-          "price": 9999,
-          "originalPrice": 12999,
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2499,
+          "originalPrice": 3299,
           "inStock": true,
-          "description": "Spacious for extensive collections"
+          "description": "Large size for prominent display"
         }
       ],
       "specifications": {
-        "material": "Premium Wood with Velvet Interior",
-        "weight": "500 grams",
-        "color": "Natural Wood Finish with Red Roses"
+        "material": "Premium led wooden box covered with acrylic sheet and framing ",
+        "weight": "",
+        "color": "Black/ White"
       },
       "shipping": {
-        "delivery": "5-7 business days",
-        "packaging": "Premium gift box included",
-        "shippingCost": "Free shipping above ₹999"
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
       },
-      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
-      "features": [
-        "Handcrafted by skilled artisans",
-        "Intricate rose pattern carving",
-        "Soft velvet interior lining",
-        "Brass hinges and clasp",
-        "Personalization available",
-        "Gift wrapping included"
-      ]
+      "careInstructions": "",
+      "features": []
     },
     {
       "id": "2",
-      "name": "Vintage Rose Jewelry Box",
-      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
+      "name": "25th Anniversary / Silver Jubilee Miniature Frame",
+      "description": "• Handcrafted 25th anniversary miniature frame designed to celebrate a couple’s silver jubilee\n• Beautiful silver anniversary theme setup with romantic décor and celebration elements\n• Features a miniature anniversary scene with cake, décor, and couple-themed details\n• Perfect wedding anniversary gift for parents, couples, or loved ones\n• Unique customized anniversary miniature frame to preserve years of love and memories\n• Ideal personalized gift for 25th marriage anniversary surprise or home décor\n• Thoughtfully crafted handmade keepsake frame for silver anniversary celebrations\n• Detailed handmade miniature artwork capturing a special milestone celebration\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below\n6396202262",
       "images": [
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg"
+        "https://i.imghippo.com/files/sScQ5841Bk.jpg",
+        "https://i.imghippo.com/files/ZqU2784srY.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-box",
+      "category": "miniature",
       "occasion": "anniversary",
-      "rating": 4.8,
-      "reviewCount": 127,
+      "rating": 4.5,
+      "reviewCount": 30,
       "customizationLevel": "premium",
       "inStock": true,
       "sizes": [
         {
-          "id": "6x4x3",
-          "size": "6 x 4 x 3",
-          "price": 5499,
-          "originalPrice": 6999,
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1499,
+          "originalPrice": 1999,
           "inStock": true,
-          "description": "Perfect for small jewelry items"
+          "description": "Compact size perfect for desks and shelves"
         },
         {
-          "id": "8x6x4",
-          "size": "8 x 6 x 4",
-          "price": 7499,
-          "originalPrice": 9999,
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 1999,
+          "originalPrice": 2599,
           "inStock": true,
-          "description": "Ideal for most jewelry collections"
+          "description": "Medium size ideal for wall display"
         },
         {
-          "id": "10x8x6",
-          "size": "10 x 8 x 6",
-          "price": 9999,
-          "originalPrice": 12999,
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2499,
+          "originalPrice": 3299,
           "inStock": true,
-          "description": "Spacious for extensive collections"
+          "description": "Large size for prominent display"
         }
       ],
       "specifications": {
-        "material": "Premium Wood with Velvet Interior",
-        "weight": "500 grams",
-        "color": "Natural Wood Finish with Red Roses"
+        "material": "Premium led wooden box covered with acrylic sheet and framing",
+        "weight": "",
+        "color": "Black/White"
       },
       "shipping": {
-        "delivery": "5-7 business days",
-        "packaging": "Premium gift box included",
-        "shippingCost": "Free shipping above ₹999"
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
       },
-      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
-      "features": [
-        "Handcrafted by skilled artisans",
-        "Intricate rose pattern carving",
-        "Soft velvet interior lining",
-        "Brass hinges and clasp",
-        "Personalization available",
-        "Gift wrapping included"
-      ]
+      "careInstructions": "",
+      "features": []
     },
     {
       "id": "3",
-      "name": "Vintage Rose Jewelry Box",
-      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
+      "name": "Couple Theme Miniature Frame ",
+      "description": "Handcrafted couple theme miniature frame with cozy living room setup\n• Designed with a binge watch night / date night theme for couples\n• Features mini sofa, TV setup, snacks, and romantic décor details\n• Perfect customized couple miniature frame to capture special moments together\n• Ideal romantic gift for couples, partners, or newlyweds\n• Great for anniversary gifts, proposal surprises, date night memories, or birthday gifts\n• Beautiful personalized couple décor frame for bedroom or living room display\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below \n6396202262",
       "images": [
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg"
+        "https://i.imghippo.com/files/lBEm9888VCM.jpg",
+        "https://i.imghippo.com/files/ezpN7558GNw.jpg",
+        "https://i.imghippo.com/files/AUov3914slE.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-box",
-      "occasion": "anniversary",
-      "rating": 4.8,
-      "reviewCount": 127,
+      "category": "miniature",
+      "occasion": "proposal",
+      "rating": 4.5,
+      "reviewCount": 30,
       "customizationLevel": "premium",
       "inStock": true,
       "sizes": [
         {
-          "id": "6x4x3",
-          "size": "6 x 4 x 3",
-          "price": 5499,
-          "originalPrice": 6999,
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1499,
+          "originalPrice": 1999,
           "inStock": true,
-          "description": "Perfect for small jewelry items"
+          "description": "Compact size perfect for desks and shelves"
         },
         {
-          "id": "8x6x4",
-          "size": "8 x 6 x 4",
-          "price": 7499,
-          "originalPrice": 9999,
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 2199,
+          "originalPrice": 2699,
           "inStock": true,
-          "description": "Ideal for most jewelry collections"
+          "description": "Medium size ideal for wall display"
         },
         {
-          "id": "10x8x6",
-          "size": "10 x 8 x 6",
-          "price": 9999,
-          "originalPrice": 12999,
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2599,
+          "originalPrice": 3599,
           "inStock": true,
-          "description": "Spacious for extensive collections"
+          "description": "Large size for prominent display"
         }
       ],
       "specifications": {
-        "material": "Premium Wood with Velvet Interior",
-        "weight": "500 grams",
-        "color": "Natural Wood Finish with Red Roses"
+        "material": "Premium led wooden box covered with acrylic sheet and framing",
+        "weight": "",
+        "color": "Black/ white"
       },
       "shipping": {
-        "delivery": "5-7 business days",
-        "packaging": "Premium gift box included",
-        "shippingCost": "Free shipping above ₹999"
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
       },
-      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
-      "features": [
-        "Handcrafted by skilled artisans",
-        "Intricate rose pattern carving",
-        "Soft velvet interior lining",
-        "Brass hinges and clasp",
-        "Personalization available",
-        "Gift wrapping included"
-      ]
+      "careInstructions": "",
+      "features": []
     },
     {
       "id": "4",
-      "name": "Vintage Rose Jewelry Box",
-      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
+      "name": "Wedding Theme Miniature Frame ",
+      "description": "Handcrafted wedding theme miniature frame with stage setup\n• Features a mini wedding stage with customized wedding board name and hashtag\n• Designed to recreate a beautiful wedding celebration scene in miniature form\n• Perfect personalized wedding miniature frame for couples\n• Ideal wedding gift for bride and groom or newly married couples\n• Great for wedding gifts, anniversary gifts, or couple memory frames\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below",
       "images": [
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg"
+        "https://i.imghippo.com/files/mTJ1450U.jpg",
+        "https://i.imghippo.com/files/fxic9248BbA.jpg",
+        "https://i.imghippo.com/files/AKm5859uHg.jpg",
+        "https://i.imghippo.com/files/vR1097pg.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-box",
-      "occasion": "anniversary",
-      "rating": 4.8,
-      "reviewCount": 127,
+      "category": "miniature",
+      "occasion": "wedding",
+      "rating": 4.6,
+      "reviewCount": 40,
       "customizationLevel": "premium",
       "inStock": true,
       "sizes": [
         {
-          "id": "6x4x3",
-          "size": "6 x 4 x 3",
-          "price": 5499,
-          "originalPrice": 6999,
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1499,
+          "originalPrice": 1999,
           "inStock": true,
-          "description": "Perfect for small jewelry items"
+          "description": "Compact size perfect for desks and shelves"
         },
         {
-          "id": "8x6x4",
-          "size": "8 x 6 x 4",
-          "price": 7499,
-          "originalPrice": 9999,
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 1999,
+          "originalPrice": 2599,
           "inStock": true,
-          "description": "Ideal for most jewelry collections"
+          "description": "Medium size ideal for wall display"
         },
         {
-          "id": "10x8x6",
-          "size": "10 x 8 x 6",
-          "price": 9999,
-          "originalPrice": 12999,
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2599,
+          "originalPrice": 3599,
           "inStock": true,
-          "description": "Spacious for extensive collections"
+          "description": "Large size for prominent display"
         }
       ],
       "specifications": {
-        "material": "Premium Wood with Velvet Interior",
-        "weight": "500 grams",
-        "color": "Natural Wood Finish with Red Roses"
+        "material": "Premium led wooden box covered with acrylic sheet and framing",
+        "weight": "",
+        "color": "Black/ White"
       },
       "shipping": {
-        "delivery": "5-7 business days",
-        "packaging": "Premium gift box included",
-        "shippingCost": "Free shipping above ₹999"
+        "delivery": "10-12 days",
+        "packaging": "",
+        "shippingCost": "150"
       },
-      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
-      "features": [
-        "Handcrafted by skilled artisans",
-        "Intricate rose pattern carving",
-        "Soft velvet interior lining",
-        "Brass hinges and clasp",
-        "Personalization available",
-        "Gift wrapping included"
-      ]
+      "careInstructions": "",
+      "features": []
     },
     {
       "id": "5",
-      "name": "Vintage Rose Jewelry Box",
-      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
+      "name": "Baby Birthday Miniature frame",
+      "description": "Handcrafted baby birthday miniature frame with cute baby room setup\n• Features a mini bed, adorable cupboard, and tiny baby toys\n• Designed with a birthday celebration theme for babies and kids\n• Perfect customized baby birthday miniature frame to capture special memories\n• Ideal first birthday gift, baby birthday keepsake, or newborn celebration gift\n• Beautiful handmade miniature baby room scene with detailed décor elements\n• Thoughtfully crafted handmade baby keepsake frame to preserve precious childhood memories 🎂👶✨\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Baby hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below\n6396202262",
       "images": [
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg"
+        "https://i.imghippo.com/files/rDmf9642OU.jpg",
+        "https://i.imghippo.com/files/CKoL7087Sz.jpg",
+        "https://i.imghippo.com/files/Cq8926Edc.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-box",
-      "occasion": "anniversary",
-      "rating": 4.8,
-      "reviewCount": 127,
+      "category": "miniature",
+      "occasion": "birthday",
+      "rating": 4.1,
+      "reviewCount": 20,
       "customizationLevel": "premium",
       "inStock": true,
       "sizes": [
         {
-          "id": "6x4x3",
-          "size": "6 x 4 x 3",
-          "price": 5499,
-          "originalPrice": 6999,
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1499,
+          "originalPrice": 1999,
           "inStock": true,
-          "description": "Perfect for small jewelry items"
+          "description": "Compact size perfect for desks and shelves"
         },
         {
-          "id": "8x6x4",
-          "size": "8 x 6 x 4",
-          "price": 7499,
-          "originalPrice": 9999,
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 1999,
+          "originalPrice": 2599,
           "inStock": true,
-          "description": "Ideal for most jewelry collections"
+          "description": "Medium size ideal for wall display"
         },
         {
-          "id": "10x8x6",
-          "size": "10 x 8 x 6",
-          "price": 9999,
-          "originalPrice": 12999,
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2599,
+          "originalPrice": 3599,
           "inStock": true,
-          "description": "Spacious for extensive collections"
+          "description": "Large size for prominent display"
         }
       ],
       "specifications": {
-        "material": "Premium Wood with Velvet Interior",
-        "weight": "500 grams",
-        "color": "Natural Wood Finish with Red Roses"
+        "material": "Premium led wooden box covered with acrylic sheet and framing",
+        "weight": "",
+        "color": "Black/White"
       },
       "shipping": {
-        "delivery": "5-7 business days",
-        "packaging": "Premium gift box included",
-        "shippingCost": "Free shipping above ₹999"
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
       },
-      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
-      "features": [
-        "Handcrafted by skilled artisans",
-        "Intricate rose pattern carving",
-        "Soft velvet interior lining",
-        "Brass hinges and clasp",
-        "Personalization available",
-        "Gift wrapping included"
-      ]
+      "careInstructions": "",
+      "features": []
     },
     {
-      "id": "5",
-      "name": "Vintage Rose Jewelry Box",
-      "description": "Handcrafted wooden jewelry box with intricate rose patterns and velvet interior.",
+      "id": "6",
+      "name": "Miniature Frame of Pre-wedding Memories ",
+      "description": "Handcrafted pre-wedding photo miniature frame designed to preserve special memories\n• Features couple’s pre-wedding photos beautifully arranged in a miniature setup\n• Includes a custom wedding board with couple names and personalized wedding hashtag\n• Decorated with tiny couple-themed miniatures representing love, romance, and special moments\n• Ideal wedding gift for bride and groom or engagement gift for couples\n• A creative custom miniature frame gift celebrating love stories and couple journeys ✨\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below\n6396202262",
       "images": [
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg",
-        "/vintage-wooden-jewelry-box-with-rose-patterns.jpg"
+        "https://i.imghippo.com/files/fuRZ1764kDM.jpg",
+        "https://i.imghippo.com/files/DA9886mbk.jpg"
       ],
       "gif": "",
       "video": "",
-      "category": "gift-box",
-      "occasion": "anniversary",
-      "rating": 4.8,
-      "reviewCount": 127,
+      "category": "miniature",
+      "occasion": "wedding",
+      "rating": 4.2,
+      "reviewCount": 50,
       "customizationLevel": "premium",
       "inStock": true,
       "sizes": [
         {
-          "id": "6x4x3",
-          "size": "6 x 4 x 3",
-          "price": 5499,
-          "originalPrice": 6999,
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1399,
+          "originalPrice": 1999,
           "inStock": true,
-          "description": "Perfect for small jewelry items"
+          "description": "Compact size perfect for desks and shelves"
         },
         {
-          "id": "8x6x4",
-          "size": "8 x 6 x 4",
-          "price": 7499,
-          "originalPrice": 9999,
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 1899,
+          "originalPrice": 2599,
           "inStock": true,
-          "description": "Ideal for most jewelry collections"
+          "description": "Medium size ideal for wall display"
         },
         {
-          "id": "10x8x6",
-          "size": "10 x 8 x 6",
-          "price": 9999,
-          "originalPrice": 12999,
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2599,
+          "originalPrice": 3599,
           "inStock": true,
-          "description": "Spacious for extensive collections"
+          "description": "Large size for prominent display"
         }
       ],
       "specifications": {
-        "material": "Premium Wood with Velvet Interior",
-        "weight": "500 grams",
-        "color": "Natural Wood Finish with Red Roses"
+        "material": "Premium led wooden box covered with acrylic sheet and framing ",
+        "weight": "",
+        "color": "Black/White "
       },
       "shipping": {
-        "delivery": "5-7 business days",
-        "packaging": "Premium gift box included",
-        "shippingCost": "Free shipping above ₹999"
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
       },
-      "careInstructions": "Wipe with dry cloth only. Keep away from direct sunlight and moisture. Use wood polish occasionally to maintain shine.",
-      "features": [
-        "Handcrafted by skilled artisans",
-        "Intricate rose pattern carving",
-        "Soft velvet interior lining",
-        "Brass hinges and clasp",
-        "Personalization available",
-        "Gift wrapping included"
-      ]
+      "careInstructions": "",
+      "features": []
+    },
+    {
+      "id": "7",
+      "name": "Minimal Miniature Frame",
+      "description": "This customized birthday miniature frame is a handmade keepsake designed to preserve your special celebration. Featuring personalized photos, miniature gifts, and aesthetic lighting, it makes a perfect birthday gift and memory frame for your loved ones.\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below\n6396202262",
+      },
+      "shipping": {
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
+      },
+      "careInstructions": "",
+      "features": []
+    },
+    {
+      "id": "8",
+      "name": "Office Theme in Miniature ",
+      "description": "Handcrafted office theme miniature frame with living room and birthday setup\n• Features a mini office-style living room with desk, décor, and birthday celebration elements\n• Designed to recreate a workspace birthday celebration in a unique miniature scene\n• Perfect customized birthday miniature frame for colleagues, bosses, or professionals\n• Ideal office birthday gift or work celebration keepsake\n• Detailed miniature furniture, birthday cake, and décor for a realistic setup\n• A creative custom miniature gift for office birthdays and professional celebrations\n\nCUSTOMER REQUIREMENTS \n1. 1 full length image (To be used as main picture)\n2. 4 to 8 other pictures(for mini photo frame on walls)\n3. Couple's interests, hobbies, likings around which other elements will be crafted (please be specific while providing details)\n4. Any other specific detail/names/occasion/ hashtag\nPlease share all the details on WhatsApp number mentioned below\n6396202262",
+      "images": [
+        "https://i.imghippo.com/files/tpwO2363Hxg.jpg  https://i.imghippo.com/files/Dg5346cRI.jpg  https://i.imghippo.com/files/lCj3038BXI.jpg  https://i.imghippo.com/files/pqY3762bV.jpg"
+      ],
+      "gif": "",
+      "video": "",
+      "category": "miniature",
+      "occasion": "birthday",
+      "rating": 4.8,
+      "reviewCount": 52,
+      "customizationLevel": "premium",
+      "inStock": true,
+      "sizes": [
+        {
+          "id": "9x12x3",
+          "size": "9 x 12 x 3",
+          "price": 1499,
+          "originalPrice": 1999,
+          "inStock": true,
+          "description": "Compact size perfect for desks and shelves"
+        },
+        {
+          "id": "10x15x3",
+          "size": "10 x 15 x 3",
+          "price": 1999,
+          "originalPrice": 2599,
+          "inStock": true,
+          "description": "Medium size ideal for wall display"
+        },
+        {
+          "id": "12x18x3",
+          "size": "12 x 18 x 3",
+          "price": 2599,
+          "originalPrice": 3599,
+          "inStock": true,
+          "description": "Large size for prominent display"
+        }
+      ],
+      "specifications": {
+        "material": "Premium led wooden box covered with acrylic sheet and framing ",
+        "weight": "",
+        "color": "Black/ White"
+      },
+      "shipping": {
+        "delivery": "10-12 working days",
+        "packaging": "",
+        "shippingCost": "150"
+      },
+      "careInstructions": "",
+      "features": []
     }
   ]
 }

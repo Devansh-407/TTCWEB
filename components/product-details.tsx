@@ -113,11 +113,23 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <p className="text-gray-700 leading-relaxed">{product.description}</p>
 
               <div className="flex items-center space-x-4">
-                <span className="text-3xl font-bold text-gray-900">{formatPrice(getProductPrice(product))}</span>
-                {product.originalPrice && (
+                <span className="text-3xl font-bold text-gray-900">
+                  {selectedSize ? formatPrice(product.sizes?.find((s: any) => s.id === selectedSize)?.price || 0) : formatPrice(getProductPrice(product))}
+                </span>
+                {selectedSize && product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice && (
+                  <span className="text-xl text-gray-500 line-through">
+                    {formatPrice(product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice)}
+                  </span>
+                )}
+                {!selectedSize && product.originalPrice && (
                   <span className="text-xl text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                 )}
-                {product.originalPrice && (
+                {selectedSize && product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice && (
+                  <Badge className="bg-green-500 text-white">
+                    Save {formatPrice((product.sizes?.find((s: any) => s.id === selectedSize)?.originalPrice || 0) - (product.sizes?.find((s: any) => s.id === selectedSize)?.price || 0))}
+                  </Badge>
+                )}
+                {!selectedSize && product.originalPrice && (
                   <Badge className="bg-green-500 text-white">Save {formatPrice(product.originalPrice - getProductPrice(product))}</Badge>
                 )}
               </div>

@@ -4,6 +4,13 @@ import { Badge } from "@/components/ui/badge"
 import { Star, ShoppingCart } from "lucide-react"
 import { getTopSelling } from "@/lib/data-loader"
 import Link from "next/link"
+import { useState } from "react"
+
+// Truncate text to specific length
+const truncateText = (text: string, maxLength: number) => {
+  if (text.length <= maxLength) return text
+  return text.substring(0, maxLength) + "..."
+}
 
 // Format price in INR
 function formatPrice(price: number | undefined) {
@@ -23,6 +30,21 @@ function getProductPrice(product: any) {
 
 export function FeaturedProducts() {
   const featuredProducts = getTopSelling().slice(0, 6)
+  const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({})
+  const [showFullDescription, setShowFullDescription] = useState<{[key: string]: boolean}>({})
+
+  const handleSizeChange = (productId: string, sizeId: string) => {
+    setSelectedSizes(prev => ({ ...prev, [productId]: sizeId }))
+  }
+
+  const getProductPriceWithSize = (product: any) => {
+    const selectedSizeId = selectedSizes[product.id]
+    if (selectedSizeId && product.sizes) {
+      const selectedSize = product.sizes.find((size: any) => size.id === selectedSizeId)
+      return selectedSize?.price || product.sizes[0]?.price || product.price || 0
+    }
+    return product.sizes?.[0]?.price || product.price || 0
+  }
 
   return (
     <section className="py-16 bg-gray-50">
@@ -55,8 +77,36 @@ export function FeaturedProducts() {
                   <h3 className="text-xl font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {truncateText(product.description, 120)}
+                    {product.description.length > 120 && (
+                      <button 
+                        onClick={() => setShowFullDescription(prev => ({ ...prev, [product.id]: !prev[product.id] }))}
+                        className="text-purple-600 hover:text-purple-700 text-sm mt-2 underline"
+                      >
+                        {showFullDescription[product.id] ? 'Read Less' : 'Read More'}
+                      </button>
+                    )}
+                  </p>
                 </div>
+
+                {/* Size Selector */}
+                {product.sizes && product.sizes.length > 0 && (
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">Size:</label>
+                    <select
+                      value={selectedSizes[product.id] || product.sizes[0]?.id || ''}
+                      onChange={(e) => handleSizeChange(product.id, e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md focus:border-purple-500 focus:outline-none text-sm"
+                    >
+                      {product.sizes.map((size: any) => (
+                        <option key={size.id} value={size.id}>
+                          {size.size} - {formatPrice(size.price)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
 
                 <div className="flex items-center space-x-2">
                   <div className="flex items-center">
@@ -75,7 +125,7 @@ export function FeaturedProducts() {
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-gray-900">{formatPrice(getProductPrice(product))}</span>
+                      <span className="text-2xl font-bold text-gray-900">{formatPrice(getProductPriceWithSize(product))}</span>
                       {product.originalPrice && (
                         <span className="text-lg text-gray-500 line-through">{formatPrice(product.originalPrice)}</span>
                       )}
