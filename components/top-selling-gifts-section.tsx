@@ -5,6 +5,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { getTopSelling } from "@/lib/data-loader"
 
+// Truncate text to specified number of lines
+function truncateText(text: string, maxLines: number = 3): { text: string; isTruncated: boolean } {
+  if (!text) return { text: '', isTruncated: false }
+  
+  // Approximate characters per line (adjust based on your design)
+  const charsPerLine = 80
+  const maxChars = maxLines * charsPerLine
+  
+  if (text.length <= maxChars) {
+    return { text, isTruncated: false }
+  }
+  
+  const truncated = text.substring(0, maxChars).trim()
+  const lastSpaceIndex = truncated.lastIndexOf(' ')
+  
+  return {
+    text: lastSpaceIndex > 0 ? truncated.substring(0, lastSpaceIndex) : truncated,
+    isTruncated: true
+  }
+}
+
 // Format price in INR
 function formatPrice(price: number | undefined) {
   if (typeof price !== 'number' || isNaN(price)) {
@@ -30,7 +51,20 @@ const topSellingProducts = getTopSelling()
 export function TopSellingGiftsSection() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [canScrollRight, setCanScrollRight] = useState(false)
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set())
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const toggleDescription = (productId: string) => {
+    setExpandedDescriptions(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(productId)) {
+        newSet.delete(productId)
+      } else {
+        newSet.add(productId)
+      }
+      return newSet
+    })
+  }
 
   useEffect(() => {
     const container = containerRef.current
@@ -121,7 +155,49 @@ export function TopSellingGiftsSection() {
                       <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
                         {product.name}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{product.description}</p>
+                      <div className="text-gray-600 text-sm leading-relaxed mb-4">
+                        {(() => {
+                          const isExpanded = expandedDescriptions.has(product.id)
+                          const description = product.description || ''
+                          
+                          if (isExpanded) {
+                            return (
+                              <>
+                                <p>{description}</p>
+                                <button
+                                  onClick={(e) => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    toggleDescription(product.id)
+                                  }}
+                                  className="text-purple-600 hover:text-purple-800 text-xs font-medium mt-1 transition-colors"
+                                >
+                                  Read Less
+                                </button>
+                              </>
+                            )
+                          } else {
+                            const { text: truncatedText, isTruncated } = truncateText(description, 3)
+                            return (
+                              <>
+                                <p>{truncatedText}</p>
+                                {isTruncated && (
+                                  <button
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      toggleDescription(product.id)
+                                    }}
+                                    className="text-purple-600 hover:text-purple-800 text-xs font-medium mt-1 transition-colors"
+                                  >
+                                    Read More
+                                  </button>
+                                )}
+                              </>
+                            )
+                          }
+                        })()}
+                      </div>
                       
                       {/* Rating */}
                       <div className="flex items-center mb-3">
