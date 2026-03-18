@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CartProvider } from "@/lib/cart-context"
+import { ClientOnly } from "@/components/client-only"
 import { WhatsAppContactButton } from "@/components/whatsapp-contact-button"
 import "./globals.css"
 
@@ -36,12 +37,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <CartProvider>
-          <Navigation />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <WhatsAppContactButton />
-        </CartProvider>
+        <ClientOnly>
+          <CartProvider>
+            <Navigation />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <WhatsAppContactButton />
+          </CartProvider>
+        </ClientOnly>
         <Analytics />
       </body>
     </html>
