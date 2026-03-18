@@ -7,7 +7,6 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CartProvider } from "@/lib/cart-context"
 import { WhatsAppContactButton } from "@/components/whatsapp-contact-button"
-import { Suspense } from "react"
 import "./globals.css"
 
 const inter = Inter({ 
@@ -38,12 +37,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <CartProvider>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Navigation />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
-            <WhatsAppContactButton />
-          </Suspense>
+          <Navigation />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <WhatsAppContactButton />
         </CartProvider>
         <Analytics />
       </body>

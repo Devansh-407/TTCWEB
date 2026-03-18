@@ -96,22 +96,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
     itemCount: 0,
   })
 
-  // Load cart from localStorage on mount
+  // Load cart from localStorage on mount (client-side only)
   useEffect(() => {
-    const savedCart = localStorage.getItem("heartfelt-cart")
-    if (savedCart) {
-      try {
-        const cartItems = JSON.parse(savedCart)
-        dispatch({ type: "LOAD_CART", payload: cartItems })
-      } catch (error) {
-        console.error("Failed to load cart from localStorage:", error)
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      const savedCart = localStorage.getItem("heartfelt-cart")
+      if (savedCart) {
+        try {
+          const cartItems = JSON.parse(savedCart)
+          dispatch({ type: "LOAD_CART", payload: cartItems })
+        } catch (error) {
+          console.error("Failed to load cart from localStorage:", error)
+        }
       }
     }
   }, [])
 
-  // Save cart to localStorage whenever it changes
+  // Save cart to localStorage whenever it changes (client-side only)
   useEffect(() => {
-    localStorage.setItem("heartfelt-cart", JSON.stringify(state.items))
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("heartfelt-cart", JSON.stringify(state.items))
+    }
   }, [state.items])
 
   return <CartContext.Provider value={{ state, dispatch }}>{children}</CartContext.Provider>
