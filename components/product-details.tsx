@@ -63,6 +63,10 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   const images = safeArrayGet(product, 'images', 
     safeGet(product, 'image') ? [safeGet(product, 'image')] : ["/placeholder.svg"]
   )
+  
+  // Debug: Log images to see what we're getting
+  console.log('Product images:', images)
+  console.log('Product data:', product)
 
   const handleQuantityChange = (change: number) => {
     setQuantity(Math.max(1, quantity + change))
@@ -98,9 +102,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <Image
                 src={images[selectedImage] || "/placeholder.svg"}
                 alt={safeGet(product, 'name', 'Product')}
-                fill
+                width={600}
+                height={600}
                 className="w-full h-full object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 priority={selectedImage === 0}
                 quality={60}
               />
@@ -117,9 +121,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                   <Image
                     src={image || "/placeholder.svg"}
                     alt={`${safeGet(product, 'name', 'Product')} view ${index + 1}`}
-                    fill
+                    width={150}
+                    height={150}
                     className="w-full h-full object-cover"
-                    sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 20vw"
                     quality={50}
                     loading="lazy"
                   />
