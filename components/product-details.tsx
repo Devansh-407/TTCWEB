@@ -183,79 +183,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               </div>
             </div>
 
-            {/* Customization */}
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">Personalization</h3>
-                <Textarea
-                  placeholder="Add your personalization details, special messages, names, dates, or any custom requirements..."
-                  value={customization}
-                  onChange={(e) => setCustomization(e.target.value)}
-                  className="min-h-[100px]"
-                />
-                <p className="text-sm text-gray-600">
-                  Our artisans will carefully incorporate your personalization into this handcrafted piece.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Size Selector */}
-            {sizes.length > 0 && (
-              <Card>
-                <CardContent className="p-6 space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Select Size</h3>
-                  <div className="space-y-3">
-                    <select
-                      value={selectedSize}
-                      onChange={(e) => setSelectedSize(e.target.value)}
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                    >
-                      {sizes.map((size: any) => (
-                        <option key={size.id} value={size.id}>
-                          {size.size} - {formatPrice(size.price)}
-                          {!size.inStock && ' (Out of Stock)'}
-                        </option>
-                      ))}
-                    </select>
-                    
-                    {/* Selected Size Details */}
-                    {selectedSize && (
-                      <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-200">
-                        {(() => {
-                          const selectedSizeData = sizes.find((s: any) => s.id === selectedSize)
-                          if (!selectedSizeData) return null
-                          
-                          return (
-                            <div className="space-y-2">
-                              <div className="text-sm text-gray-600">
-                                {selectedSizeData.description || 'Standard size option'}
-                              </div>
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <span className="text-lg font-bold text-purple-600">
-                                    {formatPrice(selectedSizeData.price)}
-                                  </span>
-                                  {selectedSizeData.originalPrice && (
-                                    <span className="text-sm text-gray-500 line-through ml-2">
-                                      {formatPrice(selectedSizeData.originalPrice)}
-                                    </span>
-                                  )}
-                                </div>
-                                {!selectedSizeData.inStock && (
-                                  <span className="text-red-500 font-medium">Out of Stock</span>
-                                )}
-                              </div>
-                            </div>
-                          )
-                        })()}
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Quantity and Add to Cart */}
+            {/* Quantity, Proceed, Favorite & Share */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <span className="text-gray-700 font-medium">Quantity:</span>
@@ -286,6 +214,22 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </Button>
               </div>
             </div>
+
+            {/* Customization */}
+            <Card>
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900">Personalization</h3>
+                <Textarea
+                  placeholder="Add your personalization details, special messages, names, dates, or any custom requirements..."
+                  value={customization}
+                  onChange={(e) => setCustomization(e.target.value)}
+                  className="min-h-[100px]"
+                />
+                <p className="text-sm text-gray-600">
+                  Our artisans will carefully incorporate your personalization into this handcrafted piece.
+                </p>
+              </CardContent>
+            </Card>
 
             {/* Product Features */}
             <Card>
