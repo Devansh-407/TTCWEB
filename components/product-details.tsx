@@ -215,22 +215,6 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               </div>
             </div>
 
-            {/* Customization */}
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">Personalization</h3>
-                <Textarea
-                  placeholder="Add your personalization details, special messages, names, dates, or any custom requirements..."
-                  value={customization}
-                  onChange={(e) => setCustomization(e.target.value)}
-                  className="min-h-[100px]"
-                />
-                <p className="text-sm text-gray-600">
-                  Our artisans will carefully incorporate your personalization into this handcrafted piece.
-                </p>
-              </CardContent>
-            </Card>
-
             {/* Size Selector */}
             {sizes.length > 0 && (
               <Card>
@@ -286,6 +270,22 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </CardContent>
               </Card>
             )}
+
+            {/* Customization */}
+            <Card>
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900">Personalization</h3>
+                <Textarea
+                  placeholder="Add your personalization details, special messages, names, dates, or any custom requirements..."
+                  value={customization}
+                  onChange={(e) => setCustomization(e.target.value)}
+                  className="min-h-[100px]"
+                />
+                <p className="text-sm text-gray-600">
+                  Our artisans will carefully incorporate your personalization into this handcrafted piece.
+                </p>
+              </CardContent>
+            </Card>
 
             {/* Product Features */}
             <Card>
