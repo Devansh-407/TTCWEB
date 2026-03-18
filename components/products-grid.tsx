@@ -326,7 +326,11 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
               <div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <Link href={`/gifts/${product.id}`} className="hover:text-purple-600 transition-colors">
+                    {product.name}
+                  </Link>
+                </h3>
 
                 <div className="text-gray-600 text-sm leading-relaxed mb-3">
                   {(() => {

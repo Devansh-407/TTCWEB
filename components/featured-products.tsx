@@ -74,8 +74,10 @@ export function FeaturedProducts() {
 
               <CardContent className="p-6 space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
-                    {product.name}
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                    <Link href={`/gifts/${product.id}`} className="hover:text-purple-600 transition-colors">
+                      {product.name}
+                    </Link>
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {truncateText(product.description, 120)}

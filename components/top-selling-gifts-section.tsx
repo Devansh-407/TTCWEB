@@ -155,7 +155,9 @@ export function TopSellingGiftsSection() {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                        {product.name}
+                        <Link href={`/gifts/${product.id}`} className="hover:text-purple-600 transition-colors">
+                          {product.name}
+                        </Link>
                       </h3>
                       <div className="text-gray-600 text-sm leading-relaxed mb-4">
                         {(() => {

@@ -144,7 +144,11 @@ export function GalleryGrid() {
               </div>
               <div className="p-6">
                 <p className="text-xs text-gray-500 uppercase mb-2">{product.category}</p>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <Link href={`/gifts/${product.id}`} className="hover:text-purple-600 transition-colors">
+                    {product.name}
+                  </Link>
+                </h3>
                 <div className="flex items-center space-x-2 mb-3">
                   <Star className="h-4 w-4 text-yellow-400 fill-current" />
                   <span className="text-sm text-gray-600">{product.rating}</span>
