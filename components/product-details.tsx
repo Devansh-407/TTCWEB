@@ -104,7 +104,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 alt={safeGet(product, 'name', 'Product')}
                 width={600}
                 height={600}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 priority={selectedImage === 0}
                 quality={60}
               />
@@ -123,7 +123,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                     alt={`${safeGet(product, 'name', 'Product')} view ${index + 1}`}
                     width={150}
                     height={150}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     quality={50}
                     loading="lazy"
                   />

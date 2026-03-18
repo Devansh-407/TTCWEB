@@ -94,7 +94,7 @@ export function RelatedProducts({ currentProductId, category }: RelatedProductsP
                   src={product.images?.[0] || product.image || "/placeholder.svg"}
                   alt={product.name}
                   fill
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   quality={60}
                   loading="lazy"

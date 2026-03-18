@@ -139,7 +139,7 @@ export function GalleryGrid() {
                 <img
                   src={product.images?.[0] || product.image || "/placeholder.svg"}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="p-6">

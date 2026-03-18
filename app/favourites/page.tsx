@@ -81,7 +81,7 @@ export default function FavouritesPage() {
                     }
                     alt={item.name || 'Favorite item'}
                     fill
-                    className="w-full h-full object-cover rounded-lg mb-4"
+                    className="w-full h-full object-contain rounded-lg mb-4"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                     quality={60}
                     loading="lazy"
