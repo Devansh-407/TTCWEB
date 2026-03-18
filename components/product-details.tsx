@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Star, ShoppingCart, Heart, Share2, Minus, Plus, MessageCircle } from "lucide-react"
 import type { Product } from "@/lib/types"
 import { useState } from "react"
+import Image from "next/image"
 
 // Format price in INR
 function formatPrice(price: number | undefined) {
@@ -94,10 +95,14 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           {/* Product Images */}
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg">
-              <img
+              <Image
                 src={images[selectedImage] || "/placeholder.svg"}
                 alt={safeGet(product, 'name', 'Product')}
+                fill
                 className="w-full h-full object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={selectedImage === 0}
+                quality={75}
               />
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -109,10 +114,13 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                     selectedImage === index ? "border-purple-500" : "border-gray-200"
                   }`}
                 >
-                  <img
+                  <Image
                     src={image || "/placeholder.svg"}
                     alt={`${safeGet(product, 'name', 'Product')} view ${index + 1}`}
+                    fill
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 33vw, 25vw"
+                    quality={60}
                   />
                 </button>
               ))}

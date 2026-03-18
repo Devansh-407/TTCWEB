@@ -286,6 +286,12 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
                 className="w-full h-full object-cover"
 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
+                quality={75}
+
+                loading="lazy"
+
               />
 
               <button

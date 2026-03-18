@@ -7,6 +7,7 @@ import { Star } from "lucide-react"
 import { getProducts } from "@/lib/data-loader"
 import Link from "next/link"
 import { useState } from "react"
+import Image from "next/image"
 
 // Truncate text to specified number of lines
 function truncateText(text: string, maxLines: number = 3): { text: string; isTruncated: boolean } {
@@ -89,10 +90,13 @@ export function RelatedProducts({ currentProductId, category }: RelatedProductsP
           {relatedProducts.map((product) => (
             <Card key={product.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="relative aspect-square overflow-hidden">
-                <img
+                <Image
                   src={product.images?.[0] || product.image || "/placeholder.svg"}
                   alt={product.name}
+                  fill
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                  quality={70}
                 />
                 {product.originalPrice && (
                   <Badge className="absolute top-3 left-3 bg-purple-500 text-white">
