@@ -72,13 +72,19 @@ export default function FavouritesPage() {
           {items.map((item) => (
             <Card key={item.id} className="group hover:shadow-lg transition-shadow">
               <CardContent className="p-4">
-                <div className="relative">
+                <div className="relative aspect-square">
                   <Image
-                    src={item.image}
+                    src={item.image || "/placeholder.svg"}
                     alt={item.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
+                    fill
+                    className="w-full h-full object-cover rounded-lg mb-4"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                    quality={75}
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder.svg"
+                    }}
                   />
                   <button
                     onClick={() => handleToggleFavourite(item)}

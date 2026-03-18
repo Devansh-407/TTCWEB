@@ -216,7 +216,7 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
           price: getProductPrice(product),
 
-          image: product.image || "/placeholder.svg",
+          image: product.images?.[0] || product.image || "/placeholder.svg",
 
           category: getCategoryName(product.category)
 
