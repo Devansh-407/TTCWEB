@@ -144,6 +144,8 @@ export function TopSellingGiftsSection() {
                         src={product.images?.[0] || product.image || "/placeholder.svg"}
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        decoding="async"
                       />
                       {product.originalPrice && product.originalPrice > getProductPrice(product) && (
                         <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm font-semibold">

@@ -286,11 +286,15 @@ export function ProductsGrid({ occasion, category }: ProductsGridProps) {
 
                 className="w-full h-full object-cover"
 
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
 
-                quality={75}
+                quality={60}
 
                 loading="lazy"
+
+                placeholder="blur"
+
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/bAARCAAIBBQAAAAAAAAAAAAAAAAECAwQREhMVFBYf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwA/wA=="
 
               />
 

@@ -100,9 +100,11 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 alt={safeGet(product, 'name', 'Product')}
                 fill
                 className="w-full h-full object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 priority={selectedImage === 0}
-                quality={75}
+                quality={60}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/bAARCAAIBBQAAAAAAAAAAAAAAAAECAwQREhMVFBYf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwA/wA=="
               />
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -119,8 +121,11 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                     alt={`${safeGet(product, 'name', 'Product')} view ${index + 1}`}
                     fill
                     className="w-full h-full object-cover"
-                    sizes="(max-width: 768px) 33vw, 25vw"
-                    quality={60}
+                    sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 20vw"
+                    quality={50}
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/bAARCAAIBBQAAAAAAAAAAAAAAAAECAwQREhMVFBYf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwA/wA=="
                   />
                 </button>
               ))}
